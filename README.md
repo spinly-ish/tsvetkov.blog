@@ -1,6 +1,6 @@
 # tsvetkov.blog
 
-Персональный блог Евгения Цветкова — учебный проект для изучения React.
+Персональный блог — учебный проект для изучения React.
 
 ## 🎯 Цель проекта
 
@@ -54,10 +54,6 @@ npx serve
 2. Settings → Pages → Source: main branch
 3. Сайт будет доступен по адресу: `https://username.github.io/tsvetkov.blog`
 
-## 🎨 Дизайн
-
-Дизайн вдохновлён [zamesin.com](https://zamesin.com) — минималистичный, тёмная тема, фокус на контенте.
-
 ## 📝 Структура файлов
 
 ```
@@ -68,11 +64,6 @@ tsvetkov.blog/
 └── .gitignore      # Git ignore
 ```
 
-## 👤 Автор
-
-**Evgeniy Tsvetkov** — Product Manager  
-- Telegram: [@tsvetkov_pm](https://t.me/tsvetkov_pm)
-- GitHub: [tsvetkov-pm](https://github.com/tsvetkov-pm)
 
 ## 📄 Лицензия
 
