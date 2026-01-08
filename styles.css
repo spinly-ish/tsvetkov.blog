@@ -1,0 +1,357 @@
+/* ===========================================
+   tsvetkov.blog — Stage 1: Pure HTML/CSS
+   Design inspired by zamesin.com
+   =========================================== */
+
+/* CSS Variables */
+:root {
+    --color-bg: #0a0a0a;
+    --color-bg-secondary: #111111;
+    --color-text: #e8e8e8;
+    --color-text-muted: #888888;
+    --color-text-subtle: #666666;
+    --color-accent: #f5f5f5;
+    --color-link: #e8e8e8;
+    --color-link-hover: #ffffff;
+    --color-border: #2a2a2a;
+    --color-input-bg: #1a1a1a;
+    
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 4rem;
+    --spacing-2xl: 6rem;
+    
+    --max-width: 680px;
+    --transition: 0.2s ease;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+/* ===========================================
+   Hero Section
+   =========================================== */
+.hero {
+    margin-bottom: var(--spacing-2xl);
+    text-align: left;
+}
+
+.hero-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.hero-name {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 400;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.02em;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-links a {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    transition: color var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--color-text);
+}
+
+/* ===========================================
+   About Section
+   =========================================== */
+.about {
+    margin-bottom: var(--spacing-xl);
+}
+
+.about h2 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.about-text {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 540px;
+}
+
+/* ===========================================
+   Newsletter Section
+   =========================================== */
+.newsletter {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.newsletter h3 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 0.875rem 1rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-text);
+    background: var(--color-input-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color var(--transition);
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: var(--color-text-subtle);
+}
+
+.newsletter-form input[type="email"]:focus {
+    border-color: var(--color-text-muted);
+}
+
+.newsletter-form button {
+    padding: 0.875rem 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-bg);
+    background: var(--color-accent);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity var(--transition), transform var(--transition);
+}
+
+.newsletter-form button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.newsletter-form button:active {
+    transform: translateY(0);
+}
+
+.newsletter-disclaimer {
+    font-size: 0.8125rem;
+    color: var(--color-text-subtle);
+}
+
+.newsletter-disclaimer a {
+    color: var(--color-text-subtle);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.newsletter-disclaimer a:hover {
+    color: var(--color-text-muted);
+}
+
+/* ===========================================
+   Blog Section
+   =========================================== */
+.blog {
+    margin-bottom: var(--spacing-xl);
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.blog-post {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.blog-post time {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-text-subtle);
+    margin-bottom: var(--spacing-xs);
+}
+
+.blog-post h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.blog-post h3 a {
+    color: var(--color-accent);
+    transition: opacity var(--transition);
+}
+
+.blog-post h3 a:hover {
+    opacity: 0.8;
+}
+
+.blog-post p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* ===========================================
+   Footer
+   =========================================== */
+.footer {
+    padding-top: var(--spacing-lg);
+}
+
+.footer-line {
+    height: 1px;
+    background: var(--color-border);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer p {
+    font-size: 0.875rem;
+    color: var(--color-text-subtle);
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+@media (max-width: 640px) {
+    .container {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+    
+    .hero-name {
+        font-size: 2.25rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form button {
+        width: 100%;
+    }
+    
+    .about h2 {
+        font-size: 1.5rem;
+    }
+    
+    .blog-post h3 {
+        font-size: 1.125rem;
+    }
+}
+
+/* ===========================================
+   Animations
+   =========================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero,
+.about,
+.newsletter,
+.blog {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.about {
+    animation-delay: 0.1s;
+    animation-fill-mode: both;
+}
+
+.newsletter {
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+}
+
+.blog {
+    animation-delay: 0.3s;
+    animation-fill-mode: both;
+}
+
