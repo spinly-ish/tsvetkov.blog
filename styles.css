@@ -350,3 +350,81 @@ a:hover {
     animation-fill-mode: both;
 }
 
+/* ===========================================
+   Post Page Styles
+   =========================================== */
+.post-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+    transition: color var(--transition);
+}
+
+.back-link:hover {
+    color: var(--color-text);
+}
+
+.post-header time {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-text-subtle);
+    margin-bottom: var(--spacing-sm);
+}
+
+.post-title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 500;
+    color: var(--color-accent);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+}
+
+.post-content {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.post-content p {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.post-content p:last-child {
+    margin-bottom: 0;
+}
+
+.post-content em {
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+
+.post-content strong {
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.post-footer {
+    padding-top: var(--spacing-lg);
+}
+
+.post-footer .footer-line {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Post page animations */
+.post-header,
+.post-content {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.post-content {
+    animation-delay: 0.1s;
+    animation-fill-mode: both;
+}
+
