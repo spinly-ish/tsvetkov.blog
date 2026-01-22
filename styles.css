@@ -384,6 +384,14 @@ a:hover {
     letter-spacing: -0.02em;
 }
 
+.post-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto var(--spacing-xl);
+    border-radius: 8px;
+}
+
 .post-content {
     margin-bottom: var(--spacing-2xl);
 }
