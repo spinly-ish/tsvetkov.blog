@@ -1,5 +1,6 @@
 # tsvetkov.blog
 Personal blog
 
-Changes:
+# Changes:
 - Duolingo's pic replaced
+- Miniature pictures on index.html added
