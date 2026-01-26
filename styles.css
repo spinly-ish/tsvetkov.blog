@@ -55,6 +55,66 @@ body {
     padding: var(--spacing-xl) var(--spacing-md);
 }
 
+/* ===========================================
+   Search
+   =========================================== */
+.search-container {
+    position: fixed;
+    top: var(--spacing-md);
+    right: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    z-index: 100;
+}
+
+.search-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.search-toggle:hover {
+    color: var(--color-text);
+    border-color: var(--color-text-muted);
+}
+
+.search-input {
+    width: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    background: var(--color-input-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    outline: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: var(--color-text-subtle);
+}
+
+.search-container.active .search-input {
+    width: 200px;
+    padding: 0.5rem 0.75rem;
+    opacity: 1;
+}
+
+.search-input:focus {
+    border-color: var(--color-text-muted);
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
@@ -342,6 +402,15 @@ a:hover {
         width: 90px;
         height: 90px;
     }
+
+    .search-container {
+        top: var(--spacing-sm);
+        right: var(--spacing-md);
+    }
+
+    .search-container.active .search-input {
+        width: 160px;
+    }
 }
 
 /* ===========================================
@@ -419,11 +488,8 @@ a:hover {
     width: 100%;
     max-width: 480px;
     height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
     margin: 0 auto var(--spacing-xl);
-    border-radius: 8px;
-    background-color: var(--color-bg);
+    border-radius: 6px;
 }
 
 .post-content {

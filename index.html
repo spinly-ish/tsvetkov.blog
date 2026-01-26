@@ -9,6 +9,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Evgeniy Tsvetkov — Product builder. Notes on product, tech, and growing as a person.">
     <title>Evgeniy Tsvetkov — Product builder</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tsvetkov.blog/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tsvetkov.blog/">
+    <meta property="og:title" content="Evgeniy Tsvetkov — Product builder">
+    <meta property="og:description" content="Notes on product, tech, and growing as a person.">
+    <meta property="og:site_name" content="Evgeniy Tsvetkov">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Evgeniy Tsvetkov — Product builder">
+    <meta name="twitter:description" content="Notes on product, tech, and growing as a person.">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Evgeniy Tsvetkov",
+        "description": "Notes on product, tech, and growing as a person.",
+        "url": "https://tsvetkov.blog",
+        "author": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov",
+            "jobTitle": "Product builder"
+        }
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +48,17 @@
 </head>
 <body>
     <div class="container">
+        <!-- Search -->
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search posts...">
+            <button class="search-toggle" id="searchToggle" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+        </div>
+
         <!-- Hero Section -->
         <header class="hero">
             <p class="hero-label">Author</p>
@@ -110,6 +153,52 @@
             <p>© 2025-2026 Evgeniy Tsvetkov</p>
         </footer>
     </div>
+
+    <script>
+        const searchToggle = document.getElementById('searchToggle');
+        const searchInput = document.getElementById('searchInput');
+        const searchContainer = document.querySelector('.search-container');
+        const blogPosts = document.querySelectorAll('.blog-post');
+
+        // Toggle search input
+        searchToggle.addEventListener('click', () => {
+            searchContainer.classList.toggle('active');
+            if (searchContainer.classList.contains('active')) {
+                searchInput.focus();
+            } else {
+                searchInput.value = '';
+                filterPosts('');
+            }
+        });
+
+        // Close search on Escape
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                searchContainer.classList.remove('active');
+                searchInput.value = '';
+                filterPosts('');
+            }
+        });
+
+        // Filter posts on input
+        searchInput.addEventListener('input', (e) => {
+            filterPosts(e.target.value);
+        });
+
+        function filterPosts(query) {
+            const searchTerm = query.toLowerCase().trim();
+            let hasResults = false;
+
+            blogPosts.forEach(post => {
+                const title = post.querySelector('h3').textContent.toLowerCase();
+                const preview = post.querySelector('.blog-post-content p').textContent.toLowerCase();
+                const matches = searchTerm === '' || title.includes(searchTerm) || preview.includes(searchTerm);
+
+                post.style.display = matches ? '' : 'none';
+                if (matches) hasResults = true;
+            });
+        }
+    </script>
 </body>
 </html>
 
