@@ -35,15 +35,24 @@ tsvetkov.blog/
 ### 1. CSS Custom Properties (переменные)
 
 ```css
+/* Светлая тема (по умолчанию) */
 :root {
-    --color-bg: #0a0a0a;
-    --color-text: #e8e8e8;
+    --color-bg: #ffffff;
+    --color-text: #1a1a1a;
+    --color-accent: #0a0a0a;
     --spacing-md: 1.5rem;
     --transition: 0.2s ease;
 }
+
+/* Тёмная тема (активируется через data-атрибут) */
+[data-theme="dark"] {
+    --color-bg: #0a0a0a;
+    --color-text: #e8e8e8;
+    --color-accent: #f5f5f5;
+}
 ```
 
-**Что это:** Переменные, объявленные в `:root`, доступны везде в CSS.
+**Что это:** Переменные, объявленные в `:root`, доступны везде в CSS. Селектор `[data-theme="dark"]` переопределяет их когда на `<html>` есть атрибут `data-theme="dark"`.
 
 **Как использовать:**
 ```css
@@ -55,7 +64,7 @@ body {
 
 **Зачем:**
 - Меняешь цвет в одном месте — меняется везде
-- Легко создать тёмную/светлую тему
+- Легко создать тёмную/светлую тему (просто переопределяешь переменные)
 - Код становится читаемым: `var(--spacing-md)` понятнее чем `1.5rem`
 
 **Связь с React:** В React ты будешь использовать CSS-in-JS (styled-components, emotion) или CSS Modules, но концепция переменных та же — один источник правды для значений.
@@ -191,6 +200,114 @@ body {
 - `transition` — срабатывает при изменении свойства (hover, добавление класса)
 
 **Здесь:** JavaScript добавляет класс `.active`, CSS плавно анимирует изменение ширины и прозрачности.
+
+---
+
+### 6. Переключение темы (Light/Dark Mode)
+
+Это комплексная фича, которая объединяет CSS-переменные, JavaScript и localStorage.
+
+**CSS — два набора переменных:**
+```css
+/* Светлая тема по умолчанию */
+:root {
+    --color-bg: #ffffff;
+    --color-text: #1a1a1a;
+}
+
+/* Тёмная тема — переопределение */
+[data-theme="dark"] {
+    --color-bg: #0a0a0a;
+    --color-text: #e8e8e8;
+}
+```
+
+**CSS — плавный переход при смене темы:**
+```css
+html, body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+```
+
+**CSS — переключение иконок:**
+```css
+/* По умолчанию показываем луну (для перехода к тёмной) */
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+/* В тёмной теме показываем солнце (для перехода к светлой) */
+[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+```
+
+**UX-принцип:** Иконка показывает *куда* переключишься, а не *где* находишься. Это стандарт индустрии (GitHub, VS Code, Discord).
+
+**JavaScript — переключение и сохранение:**
+```javascript
+const themeToggle = document.getElementById('themeToggle');
+
+function setTheme(theme) {
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+    }
+    localStorage.setItem('theme', theme);
+}
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+});
+```
+
+**JavaScript — предотвращение мигания (FOUC):**
+```html
+<head>
+    <script>
+        // Выполняется ДО загрузки CSS
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <!-- CSS загружается после -->
+</head>
+```
+
+**Почему это важно:** Без этого скрипта пользователь увидит "вспышку" светлой темы перед переключением на тёмную. Скрипт в `<head>` выполняется синхронно до рендеринга страницы.
+
+**localStorage:**
+- `localStorage.setItem('theme', 'dark')` — сохранить
+- `localStorage.getItem('theme')` — прочитать
+- Данные сохраняются даже после закрытия браузера
+
+**Связь с React:**
+```jsx
+const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light';
+});
+
+useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+}, [theme]);
+
+return (
+    <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+        {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+    </button>
+);
+```
 
 ---
 
@@ -457,6 +574,41 @@ Disallow: /private/
 
 ---
 
+## Accessibility (доступность)
+
+Accessibility (a11y) — это практики, которые делают сайт доступным для людей с ограниченными возможностями (например, использующих screen readers).
+
+### aria-label
+
+```html
+<input type="text" placeholder="Search posts..." aria-label="Search posts">
+<button aria-label="Toggle theme">
+    <svg>...</svg>
+</button>
+```
+
+**Зачем:** Screen reader не видит placeholder и не понимает, что внутри SVG. `aria-label` даёт текстовое описание элемента.
+
+**Когда использовать:**
+- Input без видимого `<label>`
+- Кнопки с иконками без текста
+- Интерактивные элементы, чей смысл неочевиден из контекста
+
+### Семантические теги
+
+```html
+<header class="hero">...</header>
+<article class="blog-post">...</article>
+<footer class="footer">...</footer>
+<time datetime="2026-01-24">January 24, 2026</time>
+```
+
+**Зачем:** Screen readers и поисковики понимают структуру страницы. `<article>` — это самостоятельный контент, `<time>` — машиночитаемая дата.
+
+**Связь с React:** Те же принципы. В React часто забывают про семантику, используя `<div>` везде. Не делай так.
+
+---
+
 ## Как это всё связано с React
 
 | Vanilla JS (этот проект) | React |
@@ -496,7 +648,7 @@ if (isActive) {
 ### Уровень 1 (CSS)
 1. Добавь hover-эффект на карточки постов (например, лёгкое поднятие)
 2. Сделай плавное появление результатов поиска
-3. Добавь тёмную/светлую тему через CSS-переменные
+3. Добавь третью тему (например, "sepia" для чтения) с переключателем
 
 ### Уровень 2 (JavaScript)
 1. Добавь подсветку найденного текста в результатах поиска
