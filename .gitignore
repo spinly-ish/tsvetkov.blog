@@ -11,3 +11,6 @@ Thumbs.db
 # Local development
 .env
 .env.local
+
+# Documentation (local only)
+docs/
