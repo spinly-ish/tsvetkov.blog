@@ -6,3 +6,4 @@ Personal blog
 - Miniature pictures on index.html added
 - Search added
 - Light theme added
+- Small fixes
