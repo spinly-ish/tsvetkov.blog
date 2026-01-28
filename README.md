@@ -7,3 +7,4 @@ Personal blog
 - Search added
 - Light theme added
 - Small fixes
+- Docs removed from github
