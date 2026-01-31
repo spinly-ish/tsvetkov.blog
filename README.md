@@ -8,3 +8,4 @@ Personal blog
 - Light theme added
 - Small fixes
 - Docs removed from github
+- New post added
