@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:zamesin.com)"
+      "WebFetch(domain:zamesin.com)",
+      "Bash(ffmpeg:*)",
+      "Bash(convert:*)",
+      "Bash(sips:*)"
     ]
   }
 }

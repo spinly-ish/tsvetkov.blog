@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // Prevent flash of wrong theme
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.25.0-min.js.gz"></script>
+    <script>window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('e20b6ff1be04dca612ab40af3c889626', {"autocapture":{"elementInteractions":true}});</script>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.">
+    <title>Doing the Thing Is Doing the Thing — Evgeniy Tsvetkov</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html">
+    <meta property="og:title" content="Doing the Thing Is Doing the Thing">
+    <meta property="og:description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.">
+    <meta property="og:image" content="https://tsvetkov.blog/pics/loop.png">
+    <meta property="og:site_name" content="Evgeniy Tsvetkov">
+    <meta property="article:published_time" content="2026-02-02">
+    <meta property="article:author" content="Evgeniy Tsvetkov">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Doing the Thing Is Doing the Thing">
+    <meta name="twitter:description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.">
+    <meta name="twitter:image" content="https://tsvetkov.blog/pics/loop.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Doing the Thing Is Doing the Thing",
+        "description": "I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.",
+        "image": "https://tsvetkov.blog/pics/loop.png",
+        "datePublished": "2026-02-02",
+        "author": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="search-container">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Post Header -->
+        <header class="post-header">
+            <a href="/" class="back-link">&larr; Back to home</a>
+            <time datetime="2026-02-02">February 2, 2026</time>
+            <h1 class="post-title">Doing the Thing Is Doing the Thing</h1>
+        </header>
+
+        <!-- Post Content -->
+        <article class="post-content">
+            <img src="/pics/loop.png" alt="Doing the thing" class="post-image">
+
+            <p>Every now and then you find a text so simple it feels almost insulting.<br>
+            No frameworks.<br>
+            No clever metaphors.<br>
+            No "10 steps to finally change your life".<br>
+            Just a hammer.<br>
+            And it keeps hitting the same nail.</p>
+
+            <p>I came across a short essay by Strangest Loop called "Things That Aren't Doing the Thing", and it instantly earned a permanent spot in my mental toolbox.</p>
+
+            <p>It reads like an instruction manual for chronic postponers — people who don't avoid work, but endlessly orbit around it. Planning it. Discussing it. Preparing for it. Consuming content about it. Feeling guilty about not doing it.</p>
+
+            <p>Sound familiar? Yeah.</p>
+
+            <p>What makes this text so effective is not what it explains, but what it refuses to entertain.</p>
+
+            <p>There's no comfort here. No permission to feel productive without producing anything.</p>
+
+            <p>Only a clean, repetitive line between action and everything pretending to be action.</p>
+
+            <p>Here is the original text, reproduced in full, with a link to the author. Read it slowly. Then notice how little room it leaves for excuses.</p>
+
+            <blockquote>
+                <h3>Things That Aren't Doing the Thing</h3>
+                <p><em>by Strangest Loop</em><br>
+                Source: <a href="https://strangestloop.io/essays/things-that-arent-doing-the-thing" target="_blank" rel="noopener">strangestloop.io</a></p>
+
+                <p>Doing the thing is doing the thing.</p>
+
+                <p>Thinking about doing the thing is not doing the thing.<br>
+                Dreaming about doing the thing is not doing the thing.<br>
+                Visualizing success from doing the thing is not doing the thing.<br>
+                Waiting to feel ready to do the thing is not doing the thing.</p>
+
+                <p>Talking about doing the thing is not doing the thing.<br>
+                Explaining the thing to others is not doing the thing.<br>
+                Arguing online about the thing is not doing the thing.<br>
+                Announcing that you'll start the thing is not doing the thing.</p>
+
+                <p>Listening to podcasts about doing the thing is not doing the thing.<br>
+                Watching tutorials about doing the thing is not doing the thing.<br>
+                Reading threads about how others did the thing is not doing the thing.</p>
+
+                <p>Planning the perfect system for the thing is not doing the thing.<br>
+                Buying tools for the thing is not doing the thing.<br>
+                Reorganizing your workspace for the thing is not doing the thing.</p>
+
+                <p>Feeling guilty about not doing the thing is not doing the thing.<br>
+                Being "busy" instead of doing the thing is not doing the thing.<br>
+                Telling yourself you'll start tomorrow is not doing the thing.</p>
+
+                <p>Failing while doing the thing is doing the thing.<br>
+                Doing it badly is doing the thing.<br>
+                Doing it timidly is doing the thing.<br>
+                Doing a small part of the thing is doing the thing.</p>
+
+                <p>Writing a blog about doing the thing is not doing the thing.</p>
+
+                <p>I should probably get back to work.</p>
+            </blockquote>
+
+            <p>The beauty of this essay is that it doesn't motivate you.</p>
+
+            <p>It corners you.</p>
+
+            <p>After reading it, you don't feel inspired — you feel caught. Because every comfortable detour has already been named, labeled, and dismissed.</p>
+
+            <p>There's only one move left.</p>
+
+            <p>Doing the thing.</p>
+
+            <p>And yeah — I should probably get back to work too.</p>
+        </article>
+
+        <!-- Post Footer -->
+        <footer class="post-footer">
+            <div class="footer-line"></div>
+            <a href="/" class="back-link">&larr; Back to home</a>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    </script>
+</body>
+</html>
