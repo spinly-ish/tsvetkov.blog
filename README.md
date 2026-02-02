@@ -9,3 +9,4 @@ Personal blog
 - Small fixes
 - Docs removed from github
 - New post added
+- Another post added
