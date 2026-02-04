@@ -10,3 +10,4 @@ Personal blog
 - Docs removed from github
 - New post added
 - Another post added
+- Lc70 post added
