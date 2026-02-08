@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // Prevent flash of wrong theme
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.25.0-min.js.gz"></script>
+    <script>window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('e20b6ff1be04dca612ab40af3c889626', {"autocapture":{"elementInteractions":true}});</script>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We're not heading toward a redesign. We're heading toward the death of the interface itself. When AI agents do the browsing, your pretty landing page won't matter.">
+    <title>Nobody Will Visit Your Website. And That's the Point. — Evgeniy Tsvetkov</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tsvetkov.blog/posts/nobody-will-visit-your-website.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tsvetkov.blog/posts/nobody-will-visit-your-website.html">
+    <meta property="og:title" content="Nobody Will Visit Your Website. And That's the Point.">
+    <meta property="og:description" content="We're not heading toward a redesign. We're heading toward the death of the interface itself. When AI agents do the browsing, your pretty landing page won't matter.">
+    <meta property="og:image" content="https://tsvetkov.blog/pics/agent.jpg">
+    <meta property="og:site_name" content="Evgeniy Tsvetkov">
+    <meta property="article:published_time" content="2026-02-08">
+    <meta property="article:author" content="Evgeniy Tsvetkov">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nobody Will Visit Your Website. And That's the Point.">
+    <meta name="twitter:description" content="We're not heading toward a redesign. We're heading toward the death of the interface itself. When AI agents do the browsing, your pretty landing page won't matter.">
+    <meta name="twitter:image" content="https://tsvetkov.blog/pics/agent.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Nobody Will Visit Your Website. And That's the Point.",
+        "description": "We're not heading toward a redesign. We're heading toward the death of the interface itself. When AI agents do the browsing, your pretty landing page won't matter.",
+        "image": "https://tsvetkov.blog/pics/agent.jpg",
+        "datePublished": "2026-02-08",
+        "author": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://tsvetkov.blog/posts/nobody-will-visit-your-website.html"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="search-container">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Post Header -->
+        <header class="post-header">
+            <a href="/" class="back-link">&larr; Back to home</a>
+            <time datetime="2026-02-08">February 8, 2026</time>
+            <h1 class="post-title">Nobody Will Visit Your Website. And That's the Point.</h1>
+        </header>
+
+        <!-- Post Content -->
+        <article class="post-content">
+            <img src="/pics/agent.jpg" alt="AI agent interface" class="post-image">
+            <p>Here's something that's been rattling around in my head lately: we're not heading toward a redesign. Not toward a new version of your app. Not toward some fresh UI trend with rounder corners and shinier gradients.</p>
+
+            <p>We're heading toward the disappearance of the interface itself.</p>
+
+            <p>Let that sink in for a second.</p>
+
+            <p>The whole idea of a "website" or an "app" as a place you go to — a digital storefront you walk into, browse around, and click buttons — is about to become as quaint as a phone book. And most people building these things haven't even noticed yet.</p>
+
+            <p>Here's why.</p>
+
+            <p>When personal AI agents become the primary way people interact with the digital world — and they will — humans stop choosing buttons. They start stating intentions. "Book me a flight to Lisbon, cheapest option, window seat." "Find me a project management tool that doesn't suck and works with Slack." "Get me health insurance — best value, no BS."</p>
+
+            <p>The agent compares. The agent analyzes. The agent makes the transaction. Your beautiful landing page with the hero image and the "Start Free Trial" button? The agent doesn't give a damn about it. It never even loads.</p>
+
+            <p>And this is where things get interesting — and uncomfortable.</p>
+
+            <p>In this model, the value shifts. Hard. It's no longer about who has the prettiest storefront. It's about who's best plugged into the machine layer of reality. Your pixel-perfect UI? Worthless. Your SEO ranking? Cute, but irrelevant. What matters now is your data, your processes, and your machine-readable expertise.</p>
+
+            <p>An AI agent doesn't need a review page with star ratings and stock photos of smiling people. It needs structured context. Decision criteria. Selection rules. The kind of stuff that no human ever reads — but that a machine eats for breakfast.</p>
+
+            <p>I'm convinced 2026-2027 will be the experimentation phase. We're already seeing the early tremors: payments inside AI assistants, integrations that skip the website entirely, the first agentic commerce protocols popping up like mushrooms after rain. By the end of the decade, the agent-first model will dominate e-commerce, finance, and services.</p>
+
+            <p>And here's the punchline that should keep product people up at night: in a few years, the question won't be "does your business need an agent-friendly interface?" The question will be "can agents even find your business at all?"</p>
+
+            <p>If the answer is no — you're invisible. Not "hard to find" invisible. Actually invisible. Like you don't exist.</p>
+
+            <p>So while everyone's still arguing about button colors and conversion funnels, the ground is shifting underneath. The next interface isn't prettier. It isn't simpler. It isn't even an interface.</p>
+
+            <p>It's a conversation between machines that humans never see.</p>
+
+            <p>Welcome to the future. Nobody's coming to your website.<br>
+            And honestly? That's the whole point.</p>
+        </article>
+
+        <!-- Post Footer -->
+        <footer class="post-footer">
+            <div class="footer-line"></div>
+            <a href="/" class="back-link">&larr; Back to home</a>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    </script>
+</body>
+</html>
