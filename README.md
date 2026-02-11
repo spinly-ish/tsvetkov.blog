@@ -12,3 +12,4 @@ Personal blog
 - Another post added
 - Lc70 post added
 - The AgentAI post added
+- Styles fixed
