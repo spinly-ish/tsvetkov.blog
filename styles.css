@@ -87,26 +87,7 @@ body {
     z-index: 100;
 }
 
-.search-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: transparent;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    color: var(--color-text-muted);
-    cursor: pointer;
-    transition: all var(--transition);
-}
-
-.search-toggle:hover {
-    color: var(--color-text);
-    border-color: var(--color-text-muted);
-}
-
-/* Theme Toggle */
+.search-toggle,
 .theme-toggle {
     display: flex;
     align-items: center;
@@ -121,6 +102,7 @@ body {
     transition: all var(--transition);
 }
 
+.search-toggle:hover,
 .theme-toggle:hover {
     color: var(--color-text);
     border-color: var(--color-text-muted);
