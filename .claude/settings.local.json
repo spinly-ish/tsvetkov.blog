@@ -5,7 +5,8 @@
       "Bash(ffmpeg:*)",
       "Bash(convert:*)",
       "Bash(sips:*)",
-      "Bash(du:*)"
+      "Bash(du:*)",
+      "Bash(python3:*)"
     ]
   }
 }
