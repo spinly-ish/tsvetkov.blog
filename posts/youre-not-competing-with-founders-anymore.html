@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // Prevent flash of wrong theme
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.25.0-min.js.gz"></script>
+    <script>window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('e20b6ff1be04dca612ab40af3c889626', {"autocapture":{"elementInteractions":true}});</script>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.">
+    <title>You're Not Competing With Founders Anymore — Evgeniy Tsvetkov</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tsvetkov.blog/posts/youre-not-competing-with-founders-anymore.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tsvetkov.blog/posts/youre-not-competing-with-founders-anymore.html">
+    <meta property="og:title" content="You're Not Competing With Founders Anymore">
+    <meta property="og:description" content="Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.">
+    <meta property="og:image" content="https://tsvetkov.blog/pics/openclaw.jpeg">
+    <meta property="og:site_name" content="Evgeniy Tsvetkov">
+    <meta property="article:published_time" content="2026-02-24">
+    <meta property="article:author" content="Evgeniy Tsvetkov">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="You're Not Competing With Founders Anymore">
+    <meta name="twitter:description" content="Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.">
+    <meta name="twitter:image" content="https://tsvetkov.blog/pics/openclaw.jpeg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "You're Not Competing With Founders Anymore",
+        "description": "Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.",
+        "image": "https://tsvetkov.blog/pics/openclaw.jpeg",
+        "datePublished": "2026-02-24",
+        "author": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://tsvetkov.blog/posts/youre-not-competing-with-founders-anymore.html"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="search-container">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Post Header -->
+        <header class="post-header">
+            <a href="/" class="back-link">&larr; Back to home</a>
+            <time datetime="2026-02-24">February 24, 2026</time>
+            <h1 class="post-title">You're Not Competing With Founders Anymore</h1>
+        </header>
+
+        <!-- Post Content -->
+        <article class="post-content">
+            <img src="/pics/openclaw.jpeg" alt="AI agent claw" class="post-image">
+
+            <p>Being a founder in 2026 feels a bit like running a zoo you definitely built but can't quite explain. You're technically a founder. In practice, you're a night-shift operator — Claude Code here, OpenClaw there, a hundred agents all "about to break everything." Some founders who hadn't touched code in ten years are back at their keyboards at 2am. Others with zero technical background are handing entire chunks of their business to agents and just hoping it holds. Nobody knows what "under control" means anymore. Probably because it doesn't mean anything anymore.</p>
+
+            <p>This is where the new anxiety kicks in. You used to compare yourself to the startup down the street. Now you're being compared to some guy who "built a startup on agents in two weeks." Read that tweet, then try to figure out why you slept last night. The race isn't human anymore — it's agentic. And your main competitor isn't another exhausted founder in a co-working space. It's a swarm of models that doesn't tire, doesn't doubt itself, and definitely doesn't spiral at 11pm after reading someone else's launch post.</p>
+
+            <p>You can't outrun a swarm by running faster. The new game isn't about doing more — it's about staying human in a world that's running on autopilot. Because in the end, the agents don't know why you're building or who you're building for. That part is still yours.</p>
+        </article>
+
+        <!-- Post Footer -->
+        <footer class="post-footer">
+            <div class="footer-line"></div>
+            <a href="/" class="back-link">&larr; Back to home</a>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    </script>
+</body>
+</html>
