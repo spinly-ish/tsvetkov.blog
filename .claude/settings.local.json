@@ -6,7 +6,8 @@
       "Bash(convert:*)",
       "Bash(sips:*)",
       "Bash(du:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(pkill:*)"
     ]
   }
 }
