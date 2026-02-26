@@ -16,12 +16,41 @@ After adding a new post, always start the server so the user can preview before 
 
 GitHub Pages, auto-deployed from `main`. The `docs/` folder is gitignored and never deployed.
 
+## Bilingual Structure
+
+The blog supports English (primary) and Russian:
+
+```
+tsvetkov.blog/           → EN homepage
+tsvetkov.blog/ru/        → RU homepage
+tsvetkov.blog/posts/     → EN posts
+tsvetkov.blog/ru/posts/  → RU posts
+```
+
+Path conventions:
+- `ru/index.html` uses `../styles.css` and `/pics/` (absolute) for images
+- `ru/posts/*.html` uses `../../styles.css` and `/pics/` (absolute) for images
+- All RU pages have `<html lang="ru">` and back-links to `/ru/`
+
+Every page (EN and RU) includes hreflang alternate links in `<head>`:
+```html
+<link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/slug.html">
+<link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/slug.html">
+<link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/slug.html">
+```
+
+Language switcher (`.lang-toggle` in `.search-container`) shows **EN** | RU on English pages and EN | **RU** on Russian pages.
+
 ## Adding a New Post
 
-Two files must be updated:
+Four files must be updated for a full bilingual post:
 
-1. **Create** `posts/<slug>.html` — copy any existing post as a template
-2. **Prepend** a new `<article class="blog-post">` block at the top of the blog list in `index.html`
+1. **Create** `posts/<slug>.html` — copy any existing EN post as a template, add hreflang + lang-toggle
+2. **Create** `ru/posts/<slug>.html` — RU stub with `[Перевод готовится]` placeholder, proper paths (`../../styles.css`), hreflang, back-link to `/ru/`
+3. **Prepend** a new `<article class="blog-post">` block at the top of `index.html`
+4. **Prepend** a matching `<article class="blog-post">` block at the top of `ru/index.html`
+
+Also update `sitemap.xml` with both the EN and RU URLs.
 
 Every post requires: `<meta name="description">`, Open Graph tags, Twitter Card tags, JSON-LD structured data, and `<link rel="canonical">`. All use absolute URLs (`https://tsvetkov.blog/...`).
 
@@ -42,4 +71,4 @@ Amplitude with session replay is loaded on every page (both `index.html` and all
 
 ## Content Style
 
-English. Mark Manson-inspired: direct, informal, punchy short paragraphs, conversational tone. Topics: product strategy, tech, behavior, simplicity vs complexity.
+Russian is the primary language for new posts; English is secondary. Mark Manson-inspired: direct, informal, punchy short paragraphs, conversational tone. Topics: product strategy, tech, behavior, simplicity vs complexity.

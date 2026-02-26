@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <script>
         // Prevent flash of wrong theme
@@ -20,11 +20,16 @@
     <title>Simplicity is the New F*ck-You to Complexity — Evgeniy Tsvetkov</title>
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
+    <link rel="canonical" href="https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
+    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
+    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
+    <meta property="og:url" content="https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
     <meta property="og:title" content="Simplicity is the New F*ck-You to Complexity">
     <meta property="og:description" content="In a world drowning in over-engineered crap, simplicity wins — from command-line tools to Toyota's Land Cruiser 70.">
     <meta property="og:image" content="https://tsvetkov.blog/pics/LC70.png">
@@ -57,17 +62,12 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html"
+            "@id": "https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html"
         }
     }
     </script>
 
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
-    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
-    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
-
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -75,8 +75,8 @@
 <body>
     <!-- Theme Toggle -->
     <div class="search-container">
-        <span class="lang-toggle"><strong>EN</strong> | <a href="/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html">RU</a></span>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="lang-toggle"><a href="/posts/simplicity-is-the-new-fuck-you-to-complexity.html">EN</a> | <strong>RU</strong></span>
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
             <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="5"></circle>
                 <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -97,32 +97,33 @@
     <div class="container">
         <!-- Post Header -->
         <header class="post-header">
-            <a href="/" class="back-link">&larr; Back to home</a>
-            <time datetime="2026-02-04">February 4, 2026</time>
+            <a href="/ru/" class="back-link">&larr; На главную</a>
+            <time datetime="2026-02-04">4 февраля 2026</time>
             <h1 class="post-title">Simplicity is the New F*ck-You to Complexity</h1>
         </header>
 
         <!-- Post Content -->
         <article class="post-content">
             <img src="/pics/LC70.png" alt="Toyota Land Cruiser 70" class="post-image">
-            <p>In a world drowning in AI bullshit and over-engineered crap, simple shit is winning. Deal with it.</p>
 
-            <p>Take the command line: fancy IDEs everywhere, yet coders jerk off to <code>curl | grep</code>. Why? It's dead simple—no menus, no hand-holding. Pure control. Fun as hell.</p>
+            <p>В мире, тонущем в AI-мусоре и переусложнённом барахле, побеждает простота. Смиритесь.</p>
 
-            <p>Same with Toyota's Land Cruiser 70: built since the '80s, waitlists years long. No fancy electronics to fry in the dirt. Just a bombproof engine you fix with a wrench. Reliable as your grandma's grudges.</p>
+            <p>Возьмите командную строку: навороченные IDE везде, а разработчики всё равно тащатся от <code>curl | grep</code>. Почему? Мертвецки просто — никаких меню, никакой опеки. Чистый контроль. Чертовски приятно.</p>
 
-            <p>Trend everywhere—from stripped-down apps to "dumb" tools that just work. Complexity breaks; simplicity endures.</p>
+            <p>То же самое с Toyota Land Cruiser 70: выпускается с 80-х, очереди на годы вперёд. Никакой хрупкой электроники для бездорожья. Просто неубиваемый движок, который чинится гаечным ключом. Надёжный, как обиды вашей бабушки.</p>
 
-            <p>Stop chasing shiny.<br>
-            Grab the terminal.<br>
-            Buy the Cruiser.<br>
-            Live better.</p>
+            <p>Тренд повсюду — от минималистичных приложений до «тупых» инструментов, которые просто работают. Сложность ломается; простота держится.</p>
+
+            <p>Перестаньте гоняться за блестящим.<br>
+            Открывайте терминал.<br>
+            Берите Крузак.<br>
+            Живите лучше.</p>
         </article>
 
         <!-- Post Footer -->
         <footer class="post-footer">
             <div class="footer-line"></div>
-            <a href="/" class="back-link">&larr; Back to home</a>
+            <a href="/ru/" class="back-link">&larr; На главную</a>
         </footer>
     </div>
 

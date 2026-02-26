@@ -2,12 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tsvetkov.blog/</loc>
-    <lastmod>2026-02-08</lastmod>
+    <lastmod>2026-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://tsvetkov.blog/ru/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://tsvetkov.blog/posts/youre-not-competing-with-founders-anymore.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tsvetkov.blog/ru/posts/youre-not-competing-with-founders-anymore.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tsvetkov.blog/posts/nobody-will-visit-your-website.html</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tsvetkov.blog/ru/posts/nobody-will-visit-your-website.html</loc>
     <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -19,7 +43,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html</loc>
     <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -31,7 +67,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tsvetkov.blog/ru/posts/your-brain-invents-complexity.html</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tsvetkov.blog/posts/b2b-is-not-about-bigger-money.html</loc>
+    <lastmod>2026-01-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tsvetkov.blog/ru/posts/b2b-is-not-about-bigger-money.html</loc>
     <lastmod>2026-01-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -43,7 +91,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tsvetkov.blog/ru/posts/memes-can-be-mirrors.html</loc>
+    <lastmod>2026-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tsvetkov.blog/posts/memes-are-product-ideas.html</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html</loc>
     <lastmod>2025-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
