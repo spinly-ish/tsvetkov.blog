@@ -153,6 +153,35 @@ body {
     border-color: var(--color-text-muted);
 }
 
+/* ===========================================
+   Language Toggle
+   =========================================== */
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+.lang-toggle a {
+    color: var(--color-text-muted);
+    transition: color var(--transition);
+}
+
+.lang-toggle a:hover {
+    color: var(--color-text);
+}
+
+.lang-toggle strong {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script>
+        // Prevent flash of wrong theme
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.25.0-min.js.gz"></script>
+    <script>window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('e20b6ff1be04dca612ab40af3c889626', {"autocapture":{"elementInteractions":true}});</script>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.">
+    <title>Doing the Thing Is Doing the Thing — Evgeniy Tsvetkov</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html">
+    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html">
+    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html">
+    <meta property="og:title" content="Doing the Thing Is Doing the Thing">
+    <meta property="og:description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. Just one blunt idea that quietly destroys procrastination by refusing to negotiate with it.">
+    <meta property="og:image" content="https://tsvetkov.blog/pics/loop.png">
+    <meta property="og:site_name" content="Evgeniy Tsvetkov">
+    <meta property="article:published_time" content="2026-02-02">
+    <meta property="article:author" content="Evgeniy Tsvetkov">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Doing the Thing Is Doing the Thing">
+    <meta name="twitter:description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. Just one blunt idea that quietly destroys procrastination by refusing to negotiate with it.">
+    <meta name="twitter:image" content="https://tsvetkov.blog/pics/loop.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Doing the Thing Is Doing the Thing",
+        "description": "I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years.",
+        "image": "https://tsvetkov.blog/pics/loop.png",
+        "datePublished": "2026-02-02",
+        "author": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="search-container">
+        <span class="lang-toggle"><a href="/posts/doing-the-thing-is-doing-the-thing.html">EN</a> | <strong>RU</strong></span>
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Post Header -->
+        <header class="post-header">
+            <a href="/ru/" class="back-link">&larr; На главную</a>
+            <time datetime="2026-02-02">2 февраля 2026</time>
+            <h1 class="post-title">Doing the Thing Is Doing the Thing</h1>
+        </header>
+
+        <!-- Post Content -->
+        <article class="post-content">
+            <img src="/pics/loop.png" alt="Doing the thing" class="post-image">
+
+            <p>Иногда попадается текст настолько простой, что кажется почти оскорбительным.<br>
+            Никаких фреймворков.<br>
+            Никаких умных метафор.<br>
+            Никаких «10 шагов, чтобы наконец изменить свою жизнь».<br>
+            Просто молоток.<br>
+            И он бьёт по одному гвоздю снова и снова.</p>
+
+            <p>Я наткнулся на короткое эссе Strangest Loop под названием «Things That Aren't Doing the Thing» — и оно сразу заняло постоянное место в моём ментальном инструментарии.</p>
+
+            <p>Читается как инструкция для хронических откладывателей — людей, которые не избегают работы, но бесконечно вращаются вокруг неё. Планируют её. Обсуждают. Готовятся. Потребляют контент о ней. Чувствуют себя виноватыми, что не делают.</p>
+
+            <p>Звучит знакомо? Да.</p>
+
+            <p>Сила этого текста — не в том, что он объясняет, а в том, чему он отказывается давать ход.</p>
+
+            <p>Никакого утешения. Никакого разрешения чувствовать себя продуктивным, ничего не произведя.</p>
+
+            <p>Только чёткая, повторяющаяся граница между действием и всем, что притворяется действием.</p>
+
+            <p>Вот оригинальный текст, полностью, со ссылкой на автора. Читайте медленно. Потом заметьте, как мало он оставляет места для отговорок.</p>
+
+            <blockquote>
+                <h3>Things That Aren't Doing the Thing</h3>
+                <p><em>by Strangest Loop</em><br>
+                Источник: <a href="https://strangestloop.io/essays/things-that-arent-doing-the-thing" target="_blank" rel="noopener">strangestloop.io</a></p>
+
+                <p>Делать дело — это делать дело.</p>
+
+                <p>Думать о деле — это не делать дело.<br>
+                Мечтать о деле — это не делать дело.<br>
+                Визуализировать успех от дела — это не делать дело.<br>
+                Ждать, пока почувствуешь себя готовым — это не делать дело.</p>
+
+                <p>Говорить о деле — это не делать дело.<br>
+                Объяснять дело другим — это не делать дело.<br>
+                Спорить о деле в интернете — это не делать дело.<br>
+                Объявлять, что начнёшь дело — это не делать дело.</p>
+
+                <p>Слушать подкасты о деле — это не делать дело.<br>
+                Смотреть туториалы о деле — это не делать дело.<br>
+                Читать треды о том, как другие сделали дело — это не делать дело.</p>
+
+                <p>Планировать идеальную систему для дела — это не делать дело.<br>
+                Покупать инструменты для дела — это не делать дело.<br>
+                Реорганизовывать рабочее место для дела — это не делать дело.</p>
+
+                <p>Чувствовать себя виноватым за то, что не делаешь дело — это не делать дело.<br>
+                Быть «занятым» вместо того, чтобы делать дело — это не делать дело.<br>
+                Говорить себе, что начнёшь завтра — это не делать дело.</p>
+
+                <p>Провалиться, делая дело — это делать дело.<br>
+                Делать плохо — это делать дело.<br>
+                Делать робко — это делать дело.<br>
+                Делать маленькую часть дела — это делать дело.</p>
+
+                <p>Писать блог о деле — это не делать дело.</p>
+
+                <p>Наверное, мне стоит вернуться к работе.</p>
+            </blockquote>
+
+            <p>Красота этого эссе в том, что оно не мотивирует.</p>
+
+            <p>Оно загоняет в угол.</p>
+
+            <p>После прочтения чувствуешь себя не вдохновлённым — а пойманным. Потому что каждый удобный обход уже назван, промаркирован и отвергнут.</p>
+
+            <p>Остался только один ход.</p>
+
+            <p>Делать дело.</p>
+
+            <p>И да — мне, наверное, тоже пора вернуться к работе.</p>
+        </article>
+
+        <!-- Post Footer -->
+        <footer class="post-footer">
+            <div class="footer-line"></div>
+            <a href="/ru/" class="back-link">&larr; На главную</a>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    </script>
+</body>
+</html>

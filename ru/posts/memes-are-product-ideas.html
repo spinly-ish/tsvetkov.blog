@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <script>
         // Prevent flash of wrong theme
@@ -16,15 +16,20 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Some memes are just jokes. Others are product ideas waiting to happen. How Loom turned collective meeting exhaustion into a product.">
+    <meta name="description" content="How Loom turned collective meeting exhaustion into a product.">
     <title>Some memes are just jokes. Others are product ideas waiting to happen. — Evgeniy Tsvetkov</title>
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
+    <link rel="canonical" href="https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
+    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html">
+    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
+    <meta property="og:url" content="https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html">
     <meta property="og:title" content="Some memes are just jokes. Others are product ideas waiting to happen.">
     <meta property="og:description" content="How Loom turned collective meeting exhaustion into a product.">
     <meta property="og:image" content="https://tsvetkov.blog/pics/Yoda_meme.jpg">
@@ -57,17 +62,12 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://tsvetkov.blog/posts/memes-are-product-ideas.html"
+            "@id": "https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html"
         }
     }
     </script>
 
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
-    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html">
-    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
-
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -75,8 +75,8 @@
 <body>
     <!-- Theme Toggle -->
     <div class="search-container">
-        <span class="lang-toggle"><strong>EN</strong> | <a href="/ru/posts/memes-are-product-ideas.html">RU</a></span>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="lang-toggle"><a href="/posts/memes-are-product-ideas.html">EN</a> | <strong>RU</strong></span>
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
             <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="5"></circle>
                 <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -97,27 +97,28 @@
     <div class="container">
         <!-- Post Header -->
         <header class="post-header">
-            <a href="/" class="back-link">&larr; Back to home</a>
-            <time datetime="2025-12-20">December 20, 2025</time>
+            <a href="/ru/" class="back-link">&larr; На главную</a>
+            <time datetime="2025-12-20">20 декабря 2025</time>
             <h1 class="post-title">Some memes are just jokes. Others are product ideas waiting to happen.</h1>
         </header>
 
         <!-- Post Content -->
         <article class="post-content">
             <img src="/pics/Yoda_meme.jpg" alt="Yoda meeting meme" class="post-image">
-            <p>For years, one of the most persistent workplace memes has been some variation of: <em>"The best meeting is the one that didn't happen."</em> It shows up everywhere — on Twitter, in Slack channels, in group chats after yet another Zoom call ends without a decision. People laugh, share it, and move on, but the meme sticks because it names something everyone feels and rarely says out loud: meetings aren't the work, they just interrupt it.</p>
 
-            <p>What makes the meme powerful is that it isn't really about hating collaboration. It's about hating forced synchronization. Most of the time, people don't need a meeting — they need context, clarity, or a quick update. The meme exaggerates the pain, but underneath the joke is a simple desire: <em>let me get the information without stopping everything else I'm doing.</em></p>
+            <p>Годами одним из самых живучих рабочих мемов остаётся что-то вроде: <em>«Лучшая встреча — та, которой не было».</em> Он всплывает везде — в Твиттере, Slack-каналах, групповых чатах после очередного Zoom-звонка без результата. Люди смеются, репостят и идут дальше. Но мем держится, потому что называет то, что все чувствуют и редко говорят вслух: встречи — это не работа, они её прерывают.</p>
 
-            <p>Loom feels like the quiet answer to that joke. Instead of asking five people to be online at the same time, it lets one person explain once and everyone else watch when it makes sense for them. No calendar ping, no "Can you see my screen?", no hour blocked for something that takes three minutes to understand. It keeps the human part of communication while removing the most frustrating part of meetings — the obligation to be there.</p>
+            <p>Сила мема в том, что он не про ненависть к коллаборации. Он про ненависть к принудительной синхронизации. Большую часть времени людям не нужна встреча — им нужен контекст, ясность или быстрый апдейт. Мем преувеличивает боль, но под шуткой — простое желание: <em>дай мне получить информацию, не останавливая всё остальное, что я делаю.</em></p>
 
-            <p>In that sense, Loom didn't come from a grand theory about the future of work. It came from the same place as the meme: collective exhaustion with unnecessary meetings. The meme described the problem in reverse, through humor. Loom simply took that joke seriously and turned it into a product.</p>
+            <p>Loom ощущается как тихий ответ на эту шутку. Вместо того чтобы просить пятерых людей быть онлайн одновременно, он позволяет одному объяснить один раз, а остальным — посмотреть когда удобно. Никаких пингов в календарь, никакого «Ты видишь мой экран?», никакого заблокированного часа на то, что занимает три минуты. Он сохраняет человеческую часть коммуникации, убирая самое раздражающее в встречах — обязанность присутствовать.</p>
+
+            <p>В этом смысле Loom появился не из грандиозной теории о будущем работы. Он появился из того же места, что и мем: из коллективного изнеможения от лишних встреч. Мем описал проблему от обратного, через юмор. Loom просто воспринял эту шутку всерьёз и превратил её в продукт.</p>
         </article>
 
         <!-- Post Footer -->
         <footer class="post-footer">
             <div class="footer-line"></div>
-            <a href="/" class="back-link">&larr; Back to home</a>
+            <a href="/ru/" class="back-link">&larr; На главную</a>
         </footer>
     </div>
 
