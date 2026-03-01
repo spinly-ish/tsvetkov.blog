@@ -71,4 +71,10 @@ Amplitude with session replay is loaded on every page (both `index.html` and all
 
 ## Content Style
 
-Russian is the primary language for new posts; English is secondary. Mark Manson-inspired: direct, informal, punchy short paragraphs, conversational tone. Topics: product strategy, tech, behavior, simplicity vs complexity.
+Russian is the primary language for new posts; English is secondary. Topics: product strategy, tech, behavior, simplicity vs complexity.
+
+### Russian posts
+Written by the author directly. Keep the original tone and text as-is.
+
+### English posts
+Mark Manson-inspired tone: direct, informal, punchy short paragraphs, conversational voice. Not a literal translation of the Russian — a rewrite that captures the same idea but sounds natural in English. Short sentences. A bit of attitude. No corporate speak.
