@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // Prevent flash of wrong theme
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.25.0-min.js.gz"></script>
+    <script>window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('e20b6ff1be04dca612ab40af3c889626', {"autocapture":{"elementInteractions":true}});</script>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="First it was curiosity. Then excitement. Now it's low-grade anxiety. The world is speeding up, and while you sleep, someone out there just found three more ways to use AI.">
+    <title>AI FOMO Is Real. And You Already Have It. — Evgeniy Tsvetkov</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tsvetkov.blog/posts/ai-fomo.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tsvetkov.blog/posts/ai-fomo.html">
+    <meta property="og:title" content="AI FOMO Is Real. And You Already Have It.">
+    <meta property="og:description" content="First it was curiosity. Then excitement. Now it's low-grade anxiety. The world is speeding up, and while you sleep, someone out there just found three more ways to use AI.">
+    <meta property="og:image" content="https://tsvetkov.blog/pics/fomo.jpg">
+    <meta property="og:site_name" content="Evgeniy Tsvetkov">
+    <meta property="article:published_time" content="2026-03-05">
+    <meta property="article:author" content="Evgeniy Tsvetkov">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI FOMO Is Real. And You Already Have It.">
+    <meta name="twitter:description" content="First it was curiosity. Then excitement. Now it's low-grade anxiety. The world is speeding up, and while you sleep, someone out there just found three more ways to use AI.">
+    <meta name="twitter:image" content="https://tsvetkov.blog/pics/fomo.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "AI FOMO Is Real. And You Already Have It.",
+        "description": "First it was curiosity. Then excitement. Now it's low-grade anxiety. The world is speeding up, and while you sleep, someone out there just found three more ways to use AI.",
+        "image": "https://tsvetkov.blog/pics/fomo.jpg",
+        "datePublished": "2026-03-05",
+        "author": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Evgeniy Tsvetkov"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://tsvetkov.blog/posts/ai-fomo.html"
+        }
+    }
+    </script>
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/ai-fomo.html">
+    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/ai-fomo.html">
+    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/ai-fomo.html">
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="search-container">
+        <span class="lang-toggle"><strong>EN</strong> | <a href="/ru/posts/ai-fomo.html">RU</a></span>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- Post Header -->
+        <header class="post-header">
+            <a href="/" class="back-link">&larr; Back to home</a>
+            <time datetime="2026-03-05">March 5, 2026</time>
+            <h1 class="post-title">AI FOMO Is Real. And You Already Have It.</h1>
+        </header>
+
+        <!-- Post Content -->
+        <article class="post-content">
+            <img src="/pics/fomo.jpg" alt="AI FOMO" class="post-image">
+
+            <p>For the past couple of months, I've been doing mostly one thing — trying stuff with AI. New tools pop up almost daily. I've honestly moved most of my routine onto them. Sometimes it even works. And yet, I keep catching myself with this nagging thought: I'm falling behind. I'm not using AI enough. Not enough. And — here's the kicker — definitely less than everyone else.</p>
+
+            <p>It started as curiosity. Then it turned into excitement. Now it's something closer to a low-grade anxiety. This feeling that the world is accelerating at some awkward, uncomfortable speed. And while I'm sleeping or doing something irrelevant — like, you know, living my actual life — somewhere out there, someone has already figured out three more ways to use AI. And that bastard is probably already using them.</p>
+        </article>
+
+        <!-- Post Footer -->
+        <footer class="post-footer">
+            <div class="footer-line"></div>
+            <a href="/" class="back-link">&larr; Back to home</a>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    </script>
+</body>
+</html>
