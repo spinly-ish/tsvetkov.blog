@@ -9,7 +9,8 @@
       "Bash(python3:*)",
       "Bash(pkill:*)",
       "Bash(git add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebSearch"
     ]
   }
 }
