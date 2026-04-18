@@ -16,6 +16,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="First it was curiosity. Then excitement. Now it's low-grade anxiety. The world is speeding up, and while you sleep, someone out there just found three more ways to use AI.">
     <title>AI FOMO Is Real. And You Already Have It. — Evgeniy Tsvetkov</title>
 
@@ -66,6 +67,7 @@
     <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/ai-fomo.html">
     <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/ai-fomo.html">
     <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/ai-fomo.html">
+    <!-- BUILD:META_END -->
 
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +106,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/fomo.jpg" alt="AI FOMO" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/fomo.jpg" alt="AI FOMO" class="post-image">
 
             <p>For the past couple of months, I've been doing mostly one thing — trying stuff with AI. New tools pop up almost daily. I've honestly moved most of my routine onto them. Sometimes it even works. And yet, I keep catching myself with this nagging thought: I'm falling behind. I'm not using AI enough. Not enough. And — here's the kicker — definitely less than everyone else.</p>
 
@@ -118,23 +120,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>

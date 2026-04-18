@@ -16,22 +16,18 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.">
     <title>Doing the Thing Is Doing the Thing — Evgeniy Tsvetkov</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html">
 
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html">
-    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html">
-    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html">
-
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html">
     <meta property="og:title" content="Doing the Thing Is Doing the Thing">
-    <meta property="og:description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. Just one blunt idea that quietly destroys procrastination by refusing to negotiate with it.">
+    <meta property="og:description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.">
     <meta property="og:image" content="https://tsvetkov.blog/pics/loop.png">
     <meta property="og:site_name" content="Evgeniy Tsvetkov">
     <meta property="article:published_time" content="2026-02-02">
@@ -40,7 +36,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Doing the Thing Is Doing the Thing">
-    <meta name="twitter:description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. Just one blunt idea that quietly destroys procrastination by refusing to negotiate with it.">
+    <meta name="twitter:description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.">
     <meta name="twitter:image" content="https://tsvetkov.blog/pics/loop.png">
 
     <!-- JSON-LD Structured Data -->
@@ -49,7 +45,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "Doing the Thing Is Doing the Thing",
-        "description": "I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years.",
+        "description": "I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.",
         "image": "https://tsvetkov.blog/pics/loop.png",
         "datePublished": "2026-02-02",
         "author": {
@@ -67,6 +63,11 @@
     }
     </script>
 
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html">
+    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html">
+    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html">
+    <!-- BUILD:META_END -->
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,7 +105,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/loop.png" alt="Doing the thing" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/loop.png" alt="Doing the thing" class="post-image">
 
             <p>Иногда попадается текст настолько простой, что кажется почти оскорбительным.<br>
             Никаких фреймворков.<br>
@@ -186,23 +187,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>

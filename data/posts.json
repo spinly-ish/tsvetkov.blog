@@ -1,0 +1,275 @@
+{
+  "site": {
+    "base_url": "https://tsvetkov.blog",
+    "author": "Evgeniy Tsvetkov",
+    "job_title": "Product builder",
+    "en": {
+      "title": "Evgeniy Tsvetkov — Product builder",
+      "description": "Evgeniy Tsvetkov — Product builder. Notes on product, tech, and growing as a person.",
+      "og_description": "Notes on product, tech, and growing as a person.",
+      "hero_label": "Author",
+      "about_title": "Full-stack product builder",
+      "about_text": "Notes on product, tech, and growing as a person.",
+      "blog_heading": "",
+      "back_link": "\u2190 Back to home",
+      "read_time_template": "~ {n} min read",
+      "feed_title": "Evgeniy Tsvetkov",
+      "feed_description": "Notes on product, tech, and growing as a person."
+    },
+    "ru": {
+      "title": "Евгений Цветков — продуктовый строитель",
+      "description": "Евгений Цветков — продуктовый строитель. Заметки о продукте, технологиях и личном росте.",
+      "og_description": "Заметки о продукте, технологиях и личном росте.",
+      "hero_label": "Автор",
+      "about_title": "Продуктовый строитель",
+      "about_text": "Заметки о продукте, технологиях и личном росте.",
+      "blog_heading": "",
+      "back_link": "\u2190 На главную",
+      "read_time_template": "~ {n} мин",
+      "feed_title": "Евгений Цветков",
+      "feed_description": "Заметки о продукте, технологиях и личном росте."
+    }
+  },
+  "posts": [
+    {
+      "slug": "books",
+      "date": "2026-03-23",
+      "read_time_min": 3,
+      "image": "/pics/books.jpg",
+      "en": {
+        "title": "You Curate Context for AI. What About Your Own Brain?",
+        "description": "You carefully curate context for AI. But what are you feeding your own neural networks? Reels and cheap dopamine? The hypocrisy is almost impressive.",
+        "excerpt": "You carefully curate context for AI. But what are you feeding your own neural networks? Reels and cheap dopamine? The hypocrisy is almost impressive.",
+        "image_alt_card": "Books vs reels",
+        "image_alt_post": "Books vs reels"
+      },
+      "ru": {
+        "title": "Книги, рилзы и нейронные сети",
+        "description": "Я много раз начинал читать книги. И много раз бросал. А потом понял: свои нейронные сети тоже надо кормить качественным контекстом.",
+        "excerpt": "Я много раз начинал читать книги. И много раз бросал. А потом понял: свои нейронные сети тоже надо кормить качественным контекстом.",
+        "image_alt_card": "Книги",
+        "image_alt_post": "Книги"
+      }
+    },
+    {
+      "slug": "content-crisis",
+      "date": "2026-03-08",
+      "read_time_min": 1,
+      "image": "/pics/crisis.jpg",
+      "en": {
+        "title": "It's Not AI. It's Overproduction.",
+        "description": "People want AI content labeled. But the real issue isn't AI — it's overproduction. Every time content gets cheaper to make, the same thing happens.",
+        "excerpt": "People want AI content labeled. But the real issue isn't AI — it's overproduction. Every time content gets cheaper to make, the same thing happens.",
+        "image_alt_card": "Content overproduction",
+        "image_alt_post": "Content overproduction"
+      },
+      "ru": {
+        "title": "Кризис контента. Не в ИИ дело",
+        "description": "Требования маркировать ИИ-контент — это симптом. Настоящая проблема — перепроизводство. Каждый раз, когда создание контента дешевеет, случается одно и то же.",
+        "excerpt": "Требования маркировать ИИ-контент — это симптом. Настоящая проблема — перепроизводство. Каждый раз, когда создание контента дешевеет, случается одно и то же.",
+        "image_alt_card": "Кризис контента",
+        "image_alt_post": "Кризис контента"
+      }
+    },
+    {
+      "slug": "ai-fomo",
+      "date": "2026-03-05",
+      "read_time_min": 1,
+      "image": "/pics/fomo.jpg",
+      "en": {
+        "title": "AI FOMO Is Real. And You Already Have It.",
+        "description": "First it was curiosity. Then excitement. Now it's low-grade anxiety. The world is speeding up, and while you sleep, someone out there just found three more ways to use AI.",
+        "excerpt": "First it was curiosity. Then excitement. Now it's low-grade anxiety. The world is speeding up, and while you sleep, someone out there just found three more ways to use AI. Probably already shipping, too.",
+        "image_alt_card": "AI FOMO",
+        "image_alt_post": "AI FOMO"
+      },
+      "ru": {
+        "title": "AI-FOMO. Тревога нового типа",
+        "description": "Сначала было любопытство, потом азарт, а теперь — лёгкая тревога. Мир ускоряется, и пока ты спишь, кто-то уже придумал ещё несколько способов использовать AI.",
+        "excerpt": "Сначала было любопытство, потом азарт, а теперь — лёгкая тревога. Мир ускоряется, и пока ты спишь, кто-то уже придумал ещё несколько способов использовать AI.",
+        "image_alt_card": "AI FOMO",
+        "image_alt_post": "AI FOMO"
+      }
+    },
+    {
+      "slug": "saas-is-not-dying",
+      "date": "2026-03-01",
+      "read_time_min": 1,
+      "image": "/pics/saas.png",
+      "en": {
+        "title": "SaaS Isn't Dying. It's Becoming Alive.",
+        "description": "Old SaaS was one product for everyone plus a settings page. New SaaS is a base platform with thousands of personal layers built by AI agents. Software stops being a product and becomes a process.",
+        "excerpt": "Old SaaS was one product for everyone plus a settings page. New SaaS is a base platform with thousands of personal layers built by AI agents. Software stops being a product and becomes a process.",
+        "image_alt_card": "SaaS evolution",
+        "image_alt_post": "SaaS evolution"
+      },
+      "ru": {
+        "title": "SaaS умирает? Нет. Он становится «живым»",
+        "description": "Старый мир SaaS — один продукт для всех плюс страница настроек. Новый мир — базовая платформа и тысячи персональных надстроек, которые собирают AI-агенты. Софт перестаёт быть продуктом и становится процессом.",
+        "excerpt": "Старый мир SaaS — один продукт для всех плюс страница настроек. Новый мир — базовая платформа и тысячи персональных надстроек, которые собирают AI-агенты. Софт перестаёт быть продуктом и становится процессом.",
+        "image_alt_card": "SaaS evolution",
+        "image_alt_post": "SaaS evolution"
+      }
+    },
+    {
+      "slug": "youre-not-competing-with-founders-anymore",
+      "date": "2026-02-24",
+      "read_time_min": 1,
+      "image": "/pics/openclaw.jpeg",
+      "en": {
+        "title": "You're Not Competing With Founders Anymore",
+        "description": "Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.",
+        "excerpt": "Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.",
+        "image_alt_card": "AI agent claw",
+        "image_alt_post": "AI agent claw"
+      },
+      "ru": {
+        "title": "You're Not Competing With Founders Anymore",
+        "description": "Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.",
+        "excerpt": "Быть фаундером в 2026 — это как управлять зоопарком, который ты сам построил, но объяснить не можешь. Гонка перестала быть человеческой — она стала агентной.",
+        "image_alt_card": "AI agent claw",
+        "image_alt_post": "AI agent claw"
+      }
+    },
+    {
+      "slug": "nobody-will-visit-your-website",
+      "date": "2026-02-08",
+      "read_time_min": 2,
+      "image": "/pics/agent.jpg",
+      "en": {
+        "title": "Nobody Will Visit Your Website. And That's the Point.",
+        "description": "We're not heading toward a redesign. We're heading toward the death of the interface itself. When AI agents do the browsing, your pretty landing page won't matter.",
+        "excerpt": "We're not heading toward a redesign — we're heading toward the death of the interface itself. When AI agents become the default way to interact with the digital world, your pretty landing page won't matter. Because no human will ever click it.",
+        "image_alt_card": "AI agent interface",
+        "image_alt_post": "AI agent interface"
+      },
+      "ru": {
+        "title": "Nobody Will Visit Your Website. And That's the Point.",
+        "description": "We're not heading toward a redesign. We're heading toward the death of the interface itself. When AI agents do the browsing, your pretty landing page won't matter.",
+        "excerpt": "Мы движемся не к редизайну — мы движемся к исчезновению интерфейса как такового. Когда AI-агенты займутся браузингом вместо людей, твоя красивая лендинговая страница им будет не нужна.",
+        "image_alt_card": "AI agent interface",
+        "image_alt_post": "AI agent interface"
+      }
+    },
+    {
+      "slug": "simplicity-is-the-new-fuck-you-to-complexity",
+      "date": "2026-02-04",
+      "read_time_min": 1,
+      "image": "/pics/LC70.png",
+      "en": {
+        "title": "Simplicity is the New F*ck-You to Complexity",
+        "description": "In a world drowning in over-engineered crap, simplicity wins — from command-line tools to Toyota's Land Cruiser 70.",
+        "excerpt": "Over-engineered crap is losing. From the command line to Toyota's Land Cruiser 70 — what's dead simple keeps winning. Complexity breaks; simplicity endures.",
+        "image_alt_card": "Toyota Land Cruiser 70",
+        "image_alt_post": "Toyota Land Cruiser 70"
+      },
+      "ru": {
+        "title": "Simplicity is the New F*ck-You to Complexity",
+        "description": "In a world drowning in over-engineered crap, simplicity wins — from command-line tools to Toyota's Land Cruiser 70.",
+        "excerpt": "Переусложнённое барахло проигрывает. От командной строки до Toyota Land Cruiser 70 — мертвецки простые вещи продолжают побеждать. Сложность ломается; простота держится.",
+        "image_alt_card": "Toyota Land Cruiser 70",
+        "image_alt_post": "Toyota Land Cruiser 70"
+      }
+    },
+    {
+      "slug": "doing-the-thing-is-doing-the-thing",
+      "date": "2026-02-02",
+      "read_time_min": 3,
+      "image": "/pics/loop.png",
+      "en": {
+        "title": "Doing the Thing Is Doing the Thing",
+        "description": "I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.",
+        "excerpt": "I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. Just one blunt idea that quietly destroys procrastination by refusing to negotiate with it.",
+        "image_alt_card": "Doing the thing",
+        "image_alt_post": "Doing the thing"
+      },
+      "ru": {
+        "title": "Doing the Thing Is Doing the Thing",
+        "description": "I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.",
+        "excerpt": "Наткнулся на крошечное эссе — самый честный совет по продуктивности за годы. Никаких хаков. Никаких систем. Один тупой повторяющийся тезис, который тихо уничтожает прокрастинацию, отказываясь с ней торговаться.",
+        "image_alt_card": "Doing the thing",
+        "image_alt_post": "Doing the thing"
+      }
+    },
+    {
+      "slug": "your-brain-invents-complexity",
+      "date": "2026-01-31",
+      "read_time_min": 2,
+      "image": "/pics/mark-crossed-arms-in-circle-light.webp",
+      "en": {
+        "title": "Your Brain Invents Complexity",
+        "description": "Mark Manson on why emotionally hard problems feel complex — and why the brain invents complexity to avoid action.",
+        "excerpt": "Mark Manson on why emotionally hard problems feel complex — and why the brain invents complexity to avoid action.",
+        "image_alt_card": "Mark Manson",
+        "image_alt_post": "Mark Manson"
+      },
+      "ru": {
+        "title": "Your Brain Invents Complexity",
+        "description": "Mark Manson on why emotionally hard problems feel complex — and why the brain invents complexity to avoid action.",
+        "excerpt": "Марк Мэнсон о том, почему эмоционально трудные проблемы кажутся сложными — и почему мозг изобретает сложность, чтобы избежать действия.",
+        "image_alt_card": "Mark Manson",
+        "image_alt_post": "Mark Manson"
+      }
+    },
+    {
+      "slug": "b2b-is-not-about-bigger-money",
+      "date": "2026-01-24",
+      "read_time_min": 2,
+      "image": "/pics/dna.jpeg",
+      "en": {
+        "title": "B2B Is Not About Bigger Money. It's About a Better Environment.",
+        "description": "B2B Is Not About Bigger Money. It's About a Better Environment. Why B2B creates a more comfortable ecosystem for finding your first true fans and evolving a product.",
+        "excerpt": "B2B isn't about chasing bigger checks — it's about finding an environment where products learn faster, earn earlier, and develop a clearer sense of what they want to become.",
+        "image_alt_card": "DNA evolution",
+        "image_alt_post": "DNA evolution"
+      },
+      "ru": {
+        "title": "B2B Is Not About Bigger Money. It's About a Better Environment.",
+        "description": "Why B2B creates a more comfortable ecosystem for finding your first true fans and evolving a product.",
+        "excerpt": "B2B — это не про погоню за большими чеками. Это про среду, в которой продукты учатся быстрее, начинают зарабатывать раньше и понимают, чем хотят стать.",
+        "image_alt_card": "DNA evolution",
+        "image_alt_post": "DNA evolution"
+      }
+    },
+    {
+      "slug": "memes-can-be-mirrors",
+      "date": "2026-01-21",
+      "read_time_min": 1,
+      "image": "/pics/Duolingo_meme.png",
+      "en": {
+        "title": "Memes can be mirrors — or megaphones.",
+        "description": "Memes can be mirrors — or megaphones. How Duolingo turned a simple retention mechanic into one of the most recognizable marketing memes.",
+        "excerpt": "Not all memes come from user pain — some are designed on purpose. Duolingo's green owl shows how a brand can turn a simple retention mechanic into viral humor.",
+        "image_alt_card": "Duolingo owl meme",
+        "image_alt_post": "Duolingo owl meme"
+      },
+      "ru": {
+        "title": "Memes can be mirrors — or megaphones.",
+        "description": "How Duolingo turned a simple retention mechanic into one of the most recognizable marketing memes.",
+        "excerpt": "Не все мемы рождаются из боли пользователей — некоторые создаются намеренно. Сова Duolingo показывает, как бренд превращает простую механику удержания в вирусный юмор.",
+        "image_alt_card": "Duolingo owl meme",
+        "image_alt_post": "Duolingo owl meme"
+      }
+    },
+    {
+      "slug": "memes-are-product-ideas",
+      "date": "2025-12-20",
+      "read_time_min": 2,
+      "image": "/pics/Yoda_meme.jpg",
+      "en": {
+        "title": "Some memes are just jokes. Others are product ideas waiting to happen.",
+        "description": "Some memes are just jokes. Others are product ideas waiting to happen. How Loom turned collective meeting exhaustion into a product.",
+        "excerpt": "The best meeting is the one that didn't happen — a meme that named something everyone feels. Loom turned that collective exhaustion into a product.",
+        "image_alt_card": "Yoda meeting meme",
+        "image_alt_post": "Yoda meeting meme"
+      },
+      "ru": {
+        "title": "Some memes are just jokes. Others are product ideas waiting to happen.",
+        "description": "How Loom turned collective meeting exhaustion into a product.",
+        "excerpt": "Лучшая встреча — та, которой не было: мем, который назвал то, что все чувствуют. Loom воспринял эту шутку всерьёз и превратил коллективную усталость от встреч в продукт.",
+        "image_alt_card": "Yoda meeting meme",
+        "image_alt_post": "Yoda meeting meme"
+      }
+    }
+  ]
+}

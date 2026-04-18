@@ -16,6 +16,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="Some memes are just jokes. Others are product ideas waiting to happen. How Loom turned collective meeting exhaustion into a product.">
     <title>Some memes are just jokes. Others are product ideas waiting to happen. — Evgeniy Tsvetkov</title>
 
@@ -26,7 +27,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
     <meta property="og:title" content="Some memes are just jokes. Others are product ideas waiting to happen.">
-    <meta property="og:description" content="How Loom turned collective meeting exhaustion into a product.">
+    <meta property="og:description" content="Some memes are just jokes. Others are product ideas waiting to happen. How Loom turned collective meeting exhaustion into a product.">
     <meta property="og:image" content="https://tsvetkov.blog/pics/Yoda_meme.jpg">
     <meta property="og:site_name" content="Evgeniy Tsvetkov">
     <meta property="article:published_time" content="2025-12-20">
@@ -35,7 +36,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Some memes are just jokes. Others are product ideas waiting to happen.">
-    <meta name="twitter:description" content="How Loom turned collective meeting exhaustion into a product.">
+    <meta name="twitter:description" content="Some memes are just jokes. Others are product ideas waiting to happen. How Loom turned collective meeting exhaustion into a product.">
     <meta name="twitter:image" content="https://tsvetkov.blog/pics/Yoda_meme.jpg">
 
     <!-- JSON-LD Structured Data -->
@@ -44,7 +45,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "Some memes are just jokes. Others are product ideas waiting to happen.",
-        "description": "How Loom turned collective meeting exhaustion into a product.",
+        "description": "Some memes are just jokes. Others are product ideas waiting to happen. How Loom turned collective meeting exhaustion into a product.",
         "image": "https://tsvetkov.blog/pics/Yoda_meme.jpg",
         "datePublished": "2025-12-20",
         "author": {
@@ -66,6 +67,7 @@
     <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
     <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html">
     <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
+    <!-- BUILD:META_END -->
 
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +106,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/Yoda_meme.jpg" alt="Yoda meeting meme" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/Yoda_meme.jpg" alt="Yoda meeting meme" class="post-image">
             <p>For years, one of the most persistent workplace memes has been some variation of: <em>"The best meeting is the one that didn't happen."</em> It shows up everywhere — on Twitter, in Slack channels, in group chats after yet another Zoom call ends without a decision. People laugh, share it, and move on, but the meme sticks because it names something everyone feels and rarely says out loud: meetings aren't the work, they just interrupt it.</p>
 
             <p>What makes the meme powerful is that it isn't really about hating collaboration. It's about hating forced synchronization. Most of the time, people don't need a meeting — they need context, clarity, or a quick update. The meme exaggerates the pain, but underneath the joke is a simple desire: <em>let me get the information without stopping everything else I'm doing.</em></p>
@@ -121,23 +123,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>

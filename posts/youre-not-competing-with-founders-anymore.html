@@ -16,6 +16,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.">
     <title>You're Not Competing With Founders Anymore — Evgeniy Tsvetkov</title>
 
@@ -66,6 +67,7 @@
     <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/youre-not-competing-with-founders-anymore.html">
     <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/youre-not-competing-with-founders-anymore.html">
     <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/youre-not-competing-with-founders-anymore.html">
+    <!-- BUILD:META_END -->
 
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +106,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/openclaw.jpeg" alt="AI agent claw" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/openclaw.jpeg" alt="AI agent claw" class="post-image">
 
             <p>Being a founder in 2026 feels a bit like running a zoo you definitely built but can't quite explain. You're technically a founder. In practice, you're a night-shift operator — Claude Code here, OpenClaw there, a hundred agents all "about to break everything." Some founders who hadn't touched code in ten years are back at their keyboards at 2am. Others with zero technical background are handing entire chunks of their business to agents and just hoping it holds. Nobody knows what "under control" means anymore. Probably because it doesn't mean anything anymore.</p>
 
@@ -120,23 +122,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>

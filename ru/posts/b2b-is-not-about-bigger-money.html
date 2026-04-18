@@ -16,16 +16,12 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="Why B2B creates a more comfortable ecosystem for finding your first true fans and evolving a product.">
     <title>B2B Is Not About Bigger Money. It's About a Better Environment. — Evgeniy Tsvetkov</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tsvetkov.blog/ru/posts/b2b-is-not-about-bigger-money.html">
-
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/b2b-is-not-about-bigger-money.html">
-    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/b2b-is-not-about-bigger-money.html">
-    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/b2b-is-not-about-bigger-money.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -67,6 +63,11 @@
     }
     </script>
 
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/b2b-is-not-about-bigger-money.html">
+    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/b2b-is-not-about-bigger-money.html">
+    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/b2b-is-not-about-bigger-money.html">
+    <!-- BUILD:META_END -->
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,7 +105,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/dna.jpeg" alt="DNA evolution" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/dna.jpeg" alt="DNA evolution" class="post-image">
 
             <p>Про B2B обычно говорят как про место, «где деньги». Но на самом деле B2B ценен не размером чека, а средой. Это значительно более комфортная экосистема для поиска первых настоящих фанатов и запуска эволюции продукта.</p>
 
@@ -126,23 +127,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>

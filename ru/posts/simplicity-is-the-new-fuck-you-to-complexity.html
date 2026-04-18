@@ -16,16 +16,12 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="In a world drowning in over-engineered crap, simplicity wins — from command-line tools to Toyota's Land Cruiser 70.">
     <title>Simplicity is the New F*ck-You to Complexity — Evgeniy Tsvetkov</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
-
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
-    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
-    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -67,6 +63,11 @@
     }
     </script>
 
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
+    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
+    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/simplicity-is-the-new-fuck-you-to-complexity.html">
+    <!-- BUILD:META_END -->
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,7 +105,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/LC70.png" alt="Toyota Land Cruiser 70" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/LC70.png" alt="Toyota Land Cruiser 70" class="post-image">
 
             <p>В мире, тонущем в AI-мусоре и переусложнённом барахле, побеждает простота. Смиритесь.</p>
 
@@ -127,23 +128,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>
