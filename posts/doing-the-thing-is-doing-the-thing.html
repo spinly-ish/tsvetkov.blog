@@ -16,6 +16,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.">
     <title>Doing the Thing Is Doing the Thing — Evgeniy Tsvetkov</title>
 
@@ -66,6 +67,7 @@
     <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html">
     <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html">
     <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/doing-the-thing-is-doing-the-thing.html">
+    <!-- BUILD:META_END -->
 
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +106,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/loop.png" alt="Doing the thing" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/loop.png" alt="Doing the thing" class="post-image">
 
             <p>Every now and then you find a text so simple it feels almost insulting.<br>
             No frameworks.<br>
@@ -186,23 +188,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>

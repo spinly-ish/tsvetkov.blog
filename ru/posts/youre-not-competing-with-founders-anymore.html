@@ -16,16 +16,12 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.">
     <title>You're Not Competing With Founders Anymore — Evgeniy Tsvetkov</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tsvetkov.blog/ru/posts/youre-not-competing-with-founders-anymore.html">
-
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/youre-not-competing-with-founders-anymore.html">
-    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/youre-not-competing-with-founders-anymore.html">
-    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/youre-not-competing-with-founders-anymore.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -49,7 +45,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "You're Not Competing With Founders Anymore",
-        "description": "Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out.",
+        "description": "Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.",
         "image": "https://tsvetkov.blog/pics/openclaw.jpeg",
         "datePublished": "2026-02-24",
         "author": {
@@ -67,6 +63,11 @@
     }
     </script>
 
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/youre-not-competing-with-founders-anymore.html">
+    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/youre-not-competing-with-founders-anymore.html">
+    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/youre-not-competing-with-founders-anymore.html">
+    <!-- BUILD:META_END -->
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,7 +105,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/openclaw.jpeg" alt="AI agent claw" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/openclaw.jpeg" alt="AI agent claw" class="post-image">
 
             <p>Быть фаундером в 2026 году — это как управлять зоопарком, который ты сам построил, но объяснить не можешь. Формально ты основатель. На практике — ночной оператор: тут Claude Code, там OpenClaw, и сотня агентов, каждый из которых «вот-вот всё сломает». Одни фаундеры, не притрагивавшиеся к коду лет десять, снова сидят за клавиатурой в два ночи. Другие — без технического бэкграунда вообще — отдают целые куски бизнеса агентам и просто надеются, что не рассыплется. Никто больше не знает, что значит «под контролем». Наверное, потому что это уже ничего не значит.</p>
 
@@ -120,23 +121,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>

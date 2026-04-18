@@ -16,6 +16,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="We're not heading toward a redesign. We're heading toward the death of the interface itself. When AI agents do the browsing, your pretty landing page won't matter.">
     <title>Nobody Will Visit Your Website. And That's the Point. — Evgeniy Tsvetkov</title>
 
@@ -66,6 +67,7 @@
     <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/nobody-will-visit-your-website.html">
     <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/nobody-will-visit-your-website.html">
     <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/nobody-will-visit-your-website.html">
+    <!-- BUILD:META_END -->
 
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +106,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/agent.jpg" alt="AI agent interface" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/agent.jpg" alt="AI agent interface" class="post-image">
             <p>Here's something that's been rattling around in my head lately: we're not heading toward a redesign. Not toward a new version of your app. Not toward some fresh UI trend with rounder corners and shinier gradients.</p>
 
             <p>We're heading toward the disappearance of the interface itself.</p>
@@ -146,23 +148,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>

@@ -224,21 +224,6 @@ a:hover {
     letter-spacing: -0.02em;
 }
 
-.social-links {
-    display: flex;
-    gap: var(--spacing-md);
-}
-
-.social-links a {
-    font-size: 0.9375rem;
-    color: var(--color-text-muted);
-    transition: color var(--transition);
-}
-
-.social-links a:hover {
-    color: var(--color-text);
-}
-
 /* ===========================================
    About Section
    =========================================== */

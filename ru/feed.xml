@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Евгений Цветков</title>
+    <link>https://tsvetkov.blog/ru/</link>
+    <description>Заметки о продукте, технологиях и личном росте.</description>
+    <language>ru</language>
+    <lastBuildDate>Sat, 18 Apr 2026 08:03:07 +0000</lastBuildDate>
+    <atom:link href="https://tsvetkov.blog/ru/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Книги, рилзы и нейронные сети</title>
+      <link>https://tsvetkov.blog/ru/posts/books.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/books.html</guid>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Я много раз начинал читать книги. И много раз бросал. А потом понял: свои нейронные сети тоже надо кормить качественным контекстом.</description>
+    </item>
+    <item>
+      <title>Кризис контента. Не в ИИ дело</title>
+      <link>https://tsvetkov.blog/ru/posts/content-crisis.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/content-crisis.html</guid>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Требования маркировать ИИ-контент — это симптом. Настоящая проблема — перепроизводство. Каждый раз, когда создание контента дешевеет, случается одно и то же.</description>
+    </item>
+    <item>
+      <title>AI-FOMO. Тревога нового типа</title>
+      <link>https://tsvetkov.blog/ru/posts/ai-fomo.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/ai-fomo.html</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Сначала было любопытство, потом азарт, а теперь — лёгкая тревога. Мир ускоряется, и пока ты спишь, кто-то уже придумал ещё несколько способов использовать AI.</description>
+    </item>
+    <item>
+      <title>SaaS умирает? Нет. Он становится «живым»</title>
+      <link>https://tsvetkov.blog/ru/posts/saas-is-not-dying.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/saas-is-not-dying.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Старый мир SaaS — один продукт для всех плюс страница настроек. Новый мир — базовая платформа и тысячи персональных надстроек, которые собирают AI-агенты. Софт перестаёт быть продуктом и становится процессом.</description>
+    </item>
+    <item>
+      <title>You're Not Competing With Founders Anymore</title>
+      <link>https://tsvetkov.blog/ru/posts/youre-not-competing-with-founders-anymore.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/youre-not-competing-with-founders-anymore.html</guid>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+      <description>Being a founder in 2026 means running a zoo of AI agents that half-work, fully panic you, and never clock out. The race stopped being human — and your only real job now is figuring out how to stay sane while the swarm does its thing.</description>
+    </item>
+    <item>
+      <title>Nobody Will Visit Your Website. And That's the Point.</title>
+      <link>https://tsvetkov.blog/ru/posts/nobody-will-visit-your-website.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/nobody-will-visit-your-website.html</guid>
+      <pubDate>Sun, 08 Feb 2026 00:00:00 +0000</pubDate>
+      <description>We're not heading toward a redesign. We're heading toward the death of the interface itself. When AI agents do the browsing, your pretty landing page won't matter.</description>
+    </item>
+    <item>
+      <title>Simplicity is the New F*ck-You to Complexity</title>
+      <link>https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/simplicity-is-the-new-fuck-you-to-complexity.html</guid>
+      <pubDate>Wed, 04 Feb 2026 00:00:00 +0000</pubDate>
+      <description>In a world drowning in over-engineered crap, simplicity wins — from command-line tools to Toyota's Land Cruiser 70.</description>
+    </item>
+    <item>
+      <title>Doing the Thing Is Doing the Thing</title>
+      <link>https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/doing-the-thing-is-doing-the-thing.html</guid>
+      <pubDate>Mon, 02 Feb 2026 00:00:00 +0000</pubDate>
+      <description>I stumbled upon a tiny essay that feels like the most honest productivity advice I've read in years. No hacks. No systems. No mindset gymnastics. Just one blunt, repeating idea that quietly destroys procrastination by refusing to negotiate with it.</description>
+    </item>
+    <item>
+      <title>Your Brain Invents Complexity</title>
+      <link>https://tsvetkov.blog/ru/posts/your-brain-invents-complexity.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/your-brain-invents-complexity.html</guid>
+      <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Mark Manson on why emotionally hard problems feel complex — and why the brain invents complexity to avoid action.</description>
+    </item>
+    <item>
+      <title>B2B Is Not About Bigger Money. It's About a Better Environment.</title>
+      <link>https://tsvetkov.blog/ru/posts/b2b-is-not-about-bigger-money.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/b2b-is-not-about-bigger-money.html</guid>
+      <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Why B2B creates a more comfortable ecosystem for finding your first true fans and evolving a product.</description>
+    </item>
+    <item>
+      <title>Memes can be mirrors — or megaphones.</title>
+      <link>https://tsvetkov.blog/ru/posts/memes-can-be-mirrors.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/memes-can-be-mirrors.html</guid>
+      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
+      <description>How Duolingo turned a simple retention mechanic into one of the most recognizable marketing memes.</description>
+    </item>
+    <item>
+      <title>Some memes are just jokes. Others are product ideas waiting to happen.</title>
+      <link>https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html</guid>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <description>How Loom turned collective meeting exhaustion into a product.</description>
+    </item>
+  </channel>
+</rss>

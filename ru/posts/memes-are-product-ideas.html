@@ -16,16 +16,12 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="How Loom turned collective meeting exhaustion into a product.">
     <title>Some memes are just jokes. Others are product ideas waiting to happen. — Evgeniy Tsvetkov</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html">
-
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
-    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html">
-    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -67,6 +63,11 @@
     }
     </script>
 
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
+    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/memes-are-product-ideas.html">
+    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/memes-are-product-ideas.html">
+    <!-- BUILD:META_END -->
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,7 +105,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/Yoda_meme.jpg" alt="Yoda meeting meme" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/Yoda_meme.jpg" alt="Yoda meeting meme" class="post-image">
 
             <p>Годами одним из самых живучих рабочих мемов остаётся что-то вроде: <em>«Лучшая встреча — та, которой не было».</em> Он всплывает везде — в Твиттере, Slack-каналах, групповых чатах после очередного Zoom-звонка без результата. Люди смеются, репостят и идут дальше. Но мем держится, потому что называет то, что все чувствуют и редко говорят вслух: встречи — это не работа, они её прерывают.</p>
 
@@ -122,23 +123,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>

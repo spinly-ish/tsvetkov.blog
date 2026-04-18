@@ -16,16 +16,12 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="Старый мир SaaS — один продукт для всех плюс страница настроек. Новый мир — базовая платформа и тысячи персональных надстроек, которые собирают AI-агенты. Софт перестаёт быть продуктом и становится процессом.">
     <title>SaaS умирает? Нет. Он становится «живым» — Evgeniy Tsvetkov</title>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tsvetkov.blog/ru/posts/saas-is-not-dying.html">
-
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/saas-is-not-dying.html">
-    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/saas-is-not-dying.html">
-    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/saas-is-not-dying.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
@@ -49,7 +45,7 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "SaaS умирает? Нет. Он становится «живым»",
-        "description": "Старый мир SaaS — один продукт для всех плюс страница настроек. Новый мир — базовая платформа и тысячи персональных надстроек, которые собирают AI-агенты.",
+        "description": "Старый мир SaaS — один продукт для всех плюс страница настроек. Новый мир — базовая платформа и тысячи персональных надстроек, которые собирают AI-агенты. Софт перестаёт быть продуктом и становится процессом.",
         "image": "https://tsvetkov.blog/pics/saas.png",
         "datePublished": "2026-03-01",
         "author": {
@@ -67,6 +63,11 @@
     }
     </script>
 
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/saas-is-not-dying.html">
+    <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/saas-is-not-dying.html">
+    <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/saas-is-not-dying.html">
+    <!-- BUILD:META_END -->
     <link rel="stylesheet" href="../../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,7 +105,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/saas.png" alt="SaaS evolution" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/saas.png" alt="SaaS evolution" class="post-image">
 
             <p>Старый мир SaaS выглядел так: один продукт для всех, плюс немного настроек.</p>
 
@@ -134,23 +135,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>

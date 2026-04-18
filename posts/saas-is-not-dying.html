@@ -16,6 +16,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BUILD:META_START -->
     <meta name="description" content="Old SaaS was one product for everyone plus a settings page. New SaaS is a base platform with thousands of personal layers built by AI agents. Software stops being a product and becomes a process.">
     <title>SaaS Isn't Dying. It's Becoming Alive. — Evgeniy Tsvetkov</title>
 
@@ -66,6 +67,7 @@
     <link rel="alternate" hreflang="en" href="https://tsvetkov.blog/posts/saas-is-not-dying.html">
     <link rel="alternate" hreflang="ru" href="https://tsvetkov.blog/ru/posts/saas-is-not-dying.html">
     <link rel="alternate" hreflang="x-default" href="https://tsvetkov.blog/posts/saas-is-not-dying.html">
+    <!-- BUILD:META_END -->
 
     <link rel="stylesheet" href="../styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +106,7 @@
 
         <!-- Post Content -->
         <article class="post-content">
-            <img src="/pics/saas.png" alt="SaaS evolution" class="post-image">
+            <img loading="lazy" decoding="async" src="/pics/saas.png" alt="SaaS evolution" class="post-image">
 
             <p>The old SaaS deal was simple. One product for everyone. A settings page nobody touches. Maybe a few toggles that make you feel like you're "customizing" something. Spoiler: you weren't.</p>
 
@@ -134,23 +136,6 @@
         </footer>
     </div>
 
-    <script>
-        const themeToggle = document.getElementById('themeToggle');
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            localStorage.setItem('theme', theme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-    </script>
+    <script src="/scripts/theme.js" defer></script>
 </body>
 </html>
