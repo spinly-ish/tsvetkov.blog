@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Триггер из Directus webhook на publish/update поста.
+  # Webhook payload type: { "event_type": "directus_publish" }
+  repository_dispatch:
+    types: [directus_publish]
 
 permissions:
   contents: read
@@ -17,6 +21,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DIRECTUS_URL: ${{ secrets.DIRECTUS_URL }}
+      DIRECTUS_TOKEN: ${{ secrets.DIRECTUS_BUILD_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
@@ -24,16 +31,24 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run build.py
-        run: python3 scripts/build.py
+      - name: Install build deps
+        run: pip install --quiet markdown
 
-      - name: Verify no uncommitted build drift
+      - name: Build site
         run: |
-          if ! git diff --quiet; then
-            echo "::warning::build.py produced different output than what is committed."
-            echo "Consider running 'python3 scripts/build.py' locally before push."
-            git diff --stat
+          if [ -n "$DIRECTUS_TOKEN" ] && [ -n "$DIRECTUS_URL" ]; then
+            echo "::notice::Building from Directus ($DIRECTUS_URL)"
+            python3 scripts/build.py --source=directus
+          else
+            echo "::notice::Building from data/posts.json (Directus secrets not set)"
+            python3 scripts/build.py --source=posts
           fi
+
+      - name: Strip non-public files before upload
+        run: |
+          # Внутренние артефакты, не должны быть на сайте
+          rm -f data/snapshot.json
+          rm -rf infra
 
       - uses: actions/configure-pages@v5
 
