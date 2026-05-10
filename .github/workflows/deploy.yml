@@ -40,8 +40,8 @@ jobs:
             echo "::notice::Building from Directus ($DIRECTUS_URL)"
             python3 scripts/build.py --source=directus
           else
-            echo "::notice::Building from data/posts.json (Directus secrets not set)"
-            python3 scripts/build.py --source=posts
+            echo "::warning::Directus secrets not set — building from data/snapshot.json (last successful Directus fetch). Set DIRECTUS_URL/DIRECTUS_BUILD_TOKEN to fetch live."
+            python3 scripts/build.py --source=snapshot
           fi
 
       - name: Strip non-public files before upload
