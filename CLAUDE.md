@@ -118,29 +118,44 @@ Written by the author directly. Keep the original tone and text as-is.
 ### English posts
 Mark Manson-inspired tone: direct, informal, punchy short paragraphs, conversational voice. Not a literal translation of the Russian — a rewrite that captures the same idea but sounds natural in English. Short sentences. A bit of attitude. No corporate speak.
 
-## CMS Migration (in progress)
+## CMS (Directus on Railway)
 
-Идёт миграция на Directus CMS как headless backend (self-host на Railway), сохраняя статический фронт и GitHub Pages. Markdown-тела постов, агентский доступ через REST API, страховка через `data/snapshot.json`.
+Источник правды для контента — **Directus на Railway** (`https://cms.tsvetkov.blog`). Cutover выполнен; CI собирает сайт фетчем из Directus при каждом push в main и при `repository_dispatch: directus_publish`.
 
 Канонический документ миграции: `docs/План развития блога/10-cms-migration.md`.
-Инфраструктура CMS: `infra/directus/` (docker-compose для локального стенда, `apply_schema.py`, гайд по Railway, README).
+Инфраструктура CMS: `infra/directus/` (docker-compose для локального стенда, `apply_schema.py`, `RAILWAY.md` — пошаговый гайд деплоя/настройки).
 
-Текущий статус:
-- ✅ Спецификация (схема коллекций, роли, этапы, cutover чек-лист) — 10-cms-migration.md
-- ✅ Локальный стенд Directus (`infra/directus/docker-compose.yml`)
-- ✅ Скрипт-провижионер схемы (`infra/directus/apply_schema.py`)
-- ✅ Гайд деплоя на Railway (`infra/directus/RAILWAY.md`)
-- ✅ Скрипт миграции `posts.json` + HTML тел в Directus (`scripts/migrate_to_directus.py`)
-- ✅ `build.py --source=directus` — fetch из Directus + Markdown→HTML + сохранение `data/snapshot.json`
-- ✅ `build.py --source=snapshot` — fallback из снапшота
-- ✅ Скрипт `scripts/add_body_markers.py` — одноразовое добавление BUILD:BODY маркеров
-- ✅ CI workflow обновлён: `repository_dispatch: directus_publish`, авто-выбор источника по наличию секрета
-- ⏳ **Деплой Directus на Railway** (требует ручных шагов — см. RAILWAY.md)
-- ⏳ Импорт текущего контента (`migrate_to_directus.py` после деплоя)
-- ⏳ Cutover (см. чек-лист в 10-cms-migration.md)
-- ⏳ Webhook в Directus → GitHub `repository_dispatch`
+### Архитектура
 
-Пока cutover не выполнен, источник правды остаётся `data/posts.json`, добавление поста — по старому workflow ниже. CI продолжает собирать `--source=posts` до тех пор, пока не появятся секреты `DIRECTUS_URL` и `DIRECTUS_BUILD_TOKEN`.
+```
+Author → Directus admin (cms.tsvetkov.blog)
+            ↓ webhook → GitHub repository_dispatch
+            ↓
+Github Actions deploy.yml (build.py --source=directus)
+            ↓ Markdown→HTML, post-process (img/link атрибуты)
+            ↓ data/snapshot.json как кэш-fallback
+GitHub Pages → tsvetkov.blog
+```
+
+### Источники для build.py
+- `--source=directus` (default в CI при наличии секретов) — fetch + render
+- `--source=snapshot` — из закоммиченного `data/snapshot.json` (страховка)
+- `--source=posts` — из `data/posts.json` (legacy, для аварийного отката)
+
+### Секреты GitHub Actions
+- `DIRECTUS_URL` = `https://cms.tsvetkov.blog`
+- `DIRECTUS_BUILD_TOKEN` = read-only токен роли `build`
+
+При отсутствии секретов CI падает обратно на `--source=posts` без падения.
+
+### Workflow добавления нового поста
+1. Открыть Directus admin → Posts → Create item.
+2. Заполнить локализованные поля (en/ru), `body_md_*` в Markdown, `status: published`.
+3. Сохранить → webhook → CI пересобирает сайт.
+4. (Опционально, до настройки webhook) Триггернуть workflow вручную: `Actions → Deploy → Run workflow`.
+
+### Что осталось
+- ⏳ Webhook в Directus → GitHub `repository_dispatch` (`event_type: directus_publish`) для автопересборки.
 
 ## Backlog
 
