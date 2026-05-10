@@ -1,25 +1,46 @@
 #!/usr/bin/env python3
 """Static site generator for tsvetkov.blog.
 
-Reads /data/posts.json and regenerates blocks delimited by BUILD-marker
-comments in existing HTML files, plus sitemap.xml and RSS feeds.
+Reads site data from one of:
+  --source=posts    (default) data/posts.json — current source of truth.
+  --source=snapshot data/snapshot.json — Directus snapshot (CI fallback).
+  --source=directus fetch live from Directus REST API (CI prod).
+
+Regenerates blocks delimited by BUILD-marker comments in existing HTML files,
+plus sitemap.xml and RSS feeds.
 
 Usage:
     python3 scripts/build.py
+    python3 scripts/build.py --source=snapshot
 
 Idempotent: running twice produces the same output.
 """
 from __future__ import annotations
 
+import argparse
 import html
 import json
+import os
 import re
 import sys
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "posts.json"
+SNAPSHOT_FILE = ROOT / "data" / "snapshot.json"
+
+LOCALIZED_SITE_FIELDS = (
+    "title", "description", "og_description", "hero_label",
+    "about_title", "about_text", "back_link", "read_time_template",
+    "feed_title", "feed_description",
+)
+LOCALIZED_POST_FIELDS = (
+    "title", "description", "excerpt",
+    "image_alt_card", "image_alt_post", "body_html",
+)
 
 RU_MONTHS = {
     1: "января", 2: "февраля", 3: "марта", 4: "апреля",
@@ -53,6 +74,10 @@ def replace_between(text: str, marker: str, content: str) -> str:
     if n == 0:
         raise ValueError(f"Marker {marker} not found in target")
     return new_text
+
+
+def has_marker(text: str, marker: str) -> bool:
+    return f"<!-- BUILD:{marker}_START -->" in text
 
 
 def esc(s: str) -> str:
@@ -218,6 +243,16 @@ def build_post_file(path: Path, post: dict, lang: str, site: dict):
     txt = path.read_text(encoding="utf-8")
     meta = render_post_meta(post, lang, site)
     new = replace_between(txt, "META", meta)
+    body_html = (post.get(lang) or {}).get("body_html")
+    if body_html:
+        if has_marker(new, "BODY"):
+            new = replace_between(new, "BODY", indent_block(body_html, 12))
+        else:
+            print(
+                f"Warning: {path.relative_to(ROOT)} has no BUILD:BODY markers; "
+                "body skipped. Run scripts/add_body_markers.py to enable.",
+                file=sys.stderr,
+            )
     if new != txt:
         path.write_text(new, encoding="utf-8")
 
@@ -309,10 +344,180 @@ def build_feed(site: dict, posts: list, lang: str):
     feed_path.write_text(xml, encoding="utf-8")
 
 
+# ---------- Data sources ----------
+
+def load_from_posts_json() -> dict:
+    return json.loads(DATA_FILE.read_text(encoding="utf-8"))
+
+
+def load_from_snapshot() -> dict:
+    if not SNAPSHOT_FILE.exists():
+        print(f"Warning: {SNAPSHOT_FILE} not found, falling back to {DATA_FILE}", file=sys.stderr)
+        return load_from_posts_json()
+    return json.loads(SNAPSHOT_FILE.read_text(encoding="utf-8"))
+
+
+def _directus_request(url: str, token: str, path: str) -> dict:
+    req = urllib.request.Request(
+        f"{url}{path}",
+        headers={"Authorization": f"Bearer {token}", "Accept": "application/json"},
+    )
+    try:
+        with urllib.request.urlopen(req) as resp:
+            return json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode(errors="replace")
+        raise RuntimeError(f"Directus {path} → {e.code}: {body}") from None
+
+
+def _split_localized(record: dict, fields: tuple[str, ...]) -> dict:
+    """Распаковать record с *_en/_ru полями в форму {..., en: {...}, ru: {...}}."""
+    out: dict = {}
+    en: dict = {}
+    ru: dict = {}
+    for key, value in record.items():
+        matched = False
+        for f in fields:
+            if key == f"{f}_en":
+                en[f] = value or ""
+                matched = True
+                break
+            if key == f"{f}_ru":
+                ru[f] = value or ""
+                matched = True
+                break
+        if not matched:
+            out[key] = value
+    out["en"] = en
+    out["ru"] = ru
+    return out
+
+
+def _md_to_html(md_text: str) -> str:
+    """Markdown → HTML через python-markdown.
+
+    Smarty НЕ подключён намеренно — оригинальные посты блога написаны прямыми
+    кавычками; не трогаем.
+
+    После рендера применяем _post_process_body() чтобы вернуть классы и атрибуты,
+    которые markdown по умолчанию не выставляет (img.post-image, lazy-loading).
+    """
+    try:
+        import markdown
+    except ImportError:
+        sys.exit(
+            "python-markdown not installed. Run: pip install markdown\n"
+            "Нужен только для --source=directus."
+        )
+    html = markdown.markdown(
+        md_text or "",
+        extensions=["extra"],
+        output_format="html5",
+    )
+    return _post_process_body(html)
+
+
+_IMG_ATTRS = ' loading="lazy" decoding="async" class="post-image"'
+_P_WRAPPED_IMG_RE = re.compile(r'<p>\s*(<img\b[^>]*>)\s*</p>')
+_IMG_RE = re.compile(r'<img\b([^>]*)>')
+_LINK_RE = re.compile(r'<a\s+([^>]*?)href="([^"]+)"([^>]*)>')
+
+
+def _post_process_body(html: str) -> str:
+    """Привести HTML, полученный из markdown, к виду ручной вёрстки постов:
+    - <img>: вытащить из <p>, добавить loading/decoding/class.
+    - <a> на внешние URL: добавить target="_blank" rel="noopener".
+    """
+    html = _P_WRAPPED_IMG_RE.sub(r'\1', html)
+
+    def _enrich_img(m: re.Match) -> str:
+        attrs = m.group(1)
+        if "loading=" in attrs and "class=" in attrs:
+            return m.group(0)
+        return f"<img{attrs}{_IMG_ATTRS}>"
+
+    html = _IMG_RE.sub(_enrich_img, html)
+
+    def _enrich_link(m: re.Match) -> str:
+        before, href, after = m.groups()
+        if not (href.startswith("http://") or href.startswith("https://")):
+            return m.group(0)
+        if "tsvetkov.blog" in href:
+            return m.group(0)
+        if "target=" in before or "target=" in after:
+            return m.group(0)
+        return f'<a {before}href="{href}"{after} target="_blank" rel="noopener">'
+
+    return _LINK_RE.sub(_enrich_link, html)
+
+
+def load_from_directus() -> dict:
+    """Fetch site_config + published posts from Directus, save snapshot, return data dict.
+
+    Output совместим с posts.json: {site: {..., en, ru}, posts: [{..., en, ru}]}.
+    Дополнительно у каждого поста en.body_html / ru.body_html.
+    """
+    url = os.environ.get("DIRECTUS_URL", "").rstrip("/")
+    token = os.environ.get("DIRECTUS_TOKEN", "")
+    if not url or not token:
+        sys.exit("Set DIRECTUS_URL and DIRECTUS_TOKEN env vars for --source=directus")
+
+    site_resp = _directus_request(url, token, "/items/site_config")
+    site_record = site_resp.get("data") or {}
+    site = _split_localized(site_record, LOCALIZED_SITE_FIELDS)
+    # Удалим internal поля Directus
+    for k in ("id", "user_created", "user_updated", "date_created", "date_updated"):
+        site.pop(k, None)
+
+    posts_resp = _directus_request(
+        url, token,
+        '/items/posts?filter[status][_eq]=published'
+        '&fields=*'
+        '&limit=-1'
+        '&sort=-date',
+    )
+    posts_records = posts_resp.get("data") or []
+
+    posts: list[dict] = []
+    for rec in posts_records:
+        rec["body_html_en"] = _md_to_html(rec.pop("body_md_en", ""))
+        rec["body_html_ru"] = _md_to_html(rec.pop("body_md_ru", ""))
+        post = _split_localized(rec, LOCALIZED_POST_FIELDS)
+        for k in ("id", "status", "sort", "user_created", "user_updated", "date_created", "date_updated"):
+            post.pop(k, None)
+        posts.append(post)
+
+    data = {"site": site, "posts": posts}
+
+    SNAPSHOT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    SNAPSHOT_FILE.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Snapshot saved: {SNAPSHOT_FILE} ({len(posts)} posts)")
+    return data
+
+
+SOURCES = {
+    "posts": load_from_posts_json,
+    "snapshot": load_from_snapshot,
+    "directus": load_from_directus,
+}
+
+
 # ---------- Main ----------
 
 def main():
-    data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    parser.add_argument(
+        "--source",
+        choices=list(SOURCES.keys()),
+        default="posts",
+        help="Data source (default: posts).",
+    )
+    args = parser.parse_args()
+
+    data = SOURCES[args.source]()
     site = data["site"]
     posts = sorted(data["posts"], key=lambda p: p["date"], reverse=True)
 
@@ -327,7 +532,7 @@ def main():
     build_feed(site, posts, "en")
     build_feed(site, posts, "ru")
 
-    print(f"Built: {len(posts)} posts × 2 langs, 2 indexes, sitemap, 2 feeds")
+    print(f"Built from {args.source}: {len(posts)} posts × 2 langs, 2 indexes, sitemap, 2 feeds")
 
 
 if __name__ == "__main__":

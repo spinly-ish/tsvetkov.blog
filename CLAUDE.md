@@ -118,6 +118,30 @@ Written by the author directly. Keep the original tone and text as-is.
 ### English posts
 Mark Manson-inspired tone: direct, informal, punchy short paragraphs, conversational voice. Not a literal translation of the Russian — a rewrite that captures the same idea but sounds natural in English. Short sentences. A bit of attitude. No corporate speak.
 
+## CMS Migration (in progress)
+
+Идёт миграция на Directus CMS как headless backend (self-host на Railway), сохраняя статический фронт и GitHub Pages. Markdown-тела постов, агентский доступ через REST API, страховка через `data/snapshot.json`.
+
+Канонический документ миграции: `docs/План развития блога/10-cms-migration.md`.
+Инфраструктура CMS: `infra/directus/` (docker-compose для локального стенда, `apply_schema.py`, гайд по Railway, README).
+
+Текущий статус:
+- ✅ Спецификация (схема коллекций, роли, этапы, cutover чек-лист) — 10-cms-migration.md
+- ✅ Локальный стенд Directus (`infra/directus/docker-compose.yml`)
+- ✅ Скрипт-провижионер схемы (`infra/directus/apply_schema.py`)
+- ✅ Гайд деплоя на Railway (`infra/directus/RAILWAY.md`)
+- ✅ Скрипт миграции `posts.json` + HTML тел в Directus (`scripts/migrate_to_directus.py`)
+- ✅ `build.py --source=directus` — fetch из Directus + Markdown→HTML + сохранение `data/snapshot.json`
+- ✅ `build.py --source=snapshot` — fallback из снапшота
+- ✅ Скрипт `scripts/add_body_markers.py` — одноразовое добавление BUILD:BODY маркеров
+- ✅ CI workflow обновлён: `repository_dispatch: directus_publish`, авто-выбор источника по наличию секрета
+- ⏳ **Деплой Directus на Railway** (требует ручных шагов — см. RAILWAY.md)
+- ⏳ Импорт текущего контента (`migrate_to_directus.py` после деплоя)
+- ⏳ Cutover (см. чек-лист в 10-cms-migration.md)
+- ⏳ Webhook в Directus → GitHub `repository_dispatch`
+
+Пока cutover не выполнен, источник правды остаётся `data/posts.json`, добавление поста — по старому workflow ниже. CI продолжает собирать `--source=posts` до тех пор, пока не появятся секреты `DIRECTUS_URL` и `DIRECTUS_BUILD_TOKEN`.
+
 ## Backlog
 
 Actual roadmap: `docs/План развития блога/ROADMAP.md`. Individual tasks in `NN-*.md` files.
