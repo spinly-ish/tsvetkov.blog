@@ -2,16 +2,16 @@
 """Static site generator for tsvetkov.blog.
 
 Reads site data from one of:
-  --source=posts    (default) data/posts.json — current source of truth.
-  --source=snapshot data/snapshot.json — Directus snapshot (CI fallback).
-  --source=directus fetch live from Directus REST API (CI prod).
+  --source=directus fetch live from Directus REST API (CI prod, requires
+                    DIRECTUS_URL/DIRECTUS_TOKEN env vars).
+  --source=snapshot (default) data/snapshot.json — last successful Directus
+                    fetch, committed to repo. Used for local dev and CI
+                    fallback when Directus is unavailable.
+  --source=posts    data/posts.json — legacy pre-cutover source. Kept for
+                    emergency rollback only.
 
 Regenerates blocks delimited by BUILD-marker comments in existing HTML files,
 plus sitemap.xml and RSS feeds.
-
-Usage:
-    python3 scripts/build.py
-    python3 scripts/build.py --source=snapshot
 
 Idempotent: running twice produces the same output.
 """
@@ -451,11 +451,24 @@ def _post_process_body(html: str) -> str:
     return _LINK_RE.sub(_enrich_link, html)
 
 
+# Поля, которые Directus добавляет автоматически в каждую запись и которые
+# не нужны на выходе билда. status/sort применимы только к posts.
+_DIRECTUS_INTERNAL_FIELDS = (
+    "id", "status", "sort",
+    "user_created", "user_updated", "date_created", "date_updated",
+)
+
+
+def _strip_directus_meta(record: dict) -> None:
+    for k in _DIRECTUS_INTERNAL_FIELDS:
+        record.pop(k, None)
+
+
 def load_from_directus() -> dict:
     """Fetch site_config + published posts from Directus, save snapshot, return data dict.
 
-    Output совместим с posts.json: {site: {..., en, ru}, posts: [{..., en, ru}]}.
-    Дополнительно у каждого поста en.body_html / ru.body_html.
+    Выход совместим с posts.json: {site: {..., en, ru}, posts: [{..., en, ru}]},
+    плюс у каждого поста en.body_html / ru.body_html.
     """
     url = os.environ.get("DIRECTUS_URL", "").rstrip("/")
     token = os.environ.get("DIRECTUS_TOKEN", "")
@@ -463,11 +476,8 @@ def load_from_directus() -> dict:
         sys.exit("Set DIRECTUS_URL and DIRECTUS_TOKEN env vars for --source=directus")
 
     site_resp = _directus_request(url, token, "/items/site_config")
-    site_record = site_resp.get("data") or {}
-    site = _split_localized(site_record, LOCALIZED_SITE_FIELDS)
-    # Удалим internal поля Directus
-    for k in ("id", "user_created", "user_updated", "date_created", "date_updated"):
-        site.pop(k, None)
+    site = _split_localized(site_resp.get("data") or {}, LOCALIZED_SITE_FIELDS)
+    _strip_directus_meta(site)
 
     posts_resp = _directus_request(
         url, token,
@@ -476,15 +486,13 @@ def load_from_directus() -> dict:
         '&limit=-1'
         '&sort=-date',
     )
-    posts_records = posts_resp.get("data") or []
 
     posts: list[dict] = []
-    for rec in posts_records:
+    for rec in posts_resp.get("data") or []:
         rec["body_html_en"] = _md_to_html(rec.pop("body_md_en", ""))
         rec["body_html_ru"] = _md_to_html(rec.pop("body_md_ru", ""))
         post = _split_localized(rec, LOCALIZED_POST_FIELDS)
-        for k in ("id", "status", "sort", "user_created", "user_updated", "date_created", "date_updated"):
-            post.pop(k, None)
+        _strip_directus_meta(post)
         posts.append(post)
 
     data = {"site": site, "posts": posts}
@@ -512,8 +520,8 @@ def main():
     parser.add_argument(
         "--source",
         choices=list(SOURCES.keys()),
-        default="posts",
-        help="Data source (default: posts).",
+        default="snapshot",
+        help="Data source (default: snapshot — works offline, no creds needed).",
     )
     args = parser.parse_args()
 
