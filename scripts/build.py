@@ -240,6 +240,15 @@ def render_posts_list(posts: list, lang: str, site: dict) -> str:
 # ---------- File writers ----------
 
 def build_post_file(path: Path, post: dict, lang: str, site: dict):
+    if not path.exists():
+        # Скелет — разовый prereq per slug (см. CLAUDE.md → "One-time HTML skeletons").
+        # Если файла нет — скипаем этот пост, но не валим всю сборку.
+        print(
+            f"Warning: {path.relative_to(ROOT)} missing; post '{post.get('slug')}' "
+            f"({lang}) skipped. Create the skeleton or remove the post from CMS.",
+            file=sys.stderr,
+        )
+        return
     txt = path.read_text(encoding="utf-8")
     meta = render_post_meta(post, lang, site)
     new = replace_between(txt, "META", meta)

@@ -5,14 +5,21 @@
     <link>https://tsvetkov.blog/</link>
     <description>Notes on product, tech, and growing as a person.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 10 May 2026 18:05:04 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2026 11:05:29 +0000</lastBuildDate>
     <atom:link href="https://tsvetkov.blog/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Where Your Friends Are, There Will Your Paycheck Be Also</title>
+      <link>https://tsvetkov.blog/posts/friending-bias.html</link>
+      <guid isPermaLink="true">https://tsvetkov.blog/posts/friending-bias.html</guid>
+      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
+      <description>21 billion Facebook friendships, one uncomfortable finding: the share of wealthier friends in a poor kid's circle predicts their adult income better than school, neighborhood, or parents. And moving doesn't fix it.</description>
+    </item>
     <item>
       <title>You Curate Context for AI. What About Your Own Brain?</title>
       <link>https://tsvetkov.blog/posts/books.html</link>
       <guid isPermaLink="true">https://tsvetkov.blog/posts/books.html</guid>
       <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-      <description>You carefully curate context for AI. But what are you feeding your own neural networks? Reels and cheap dopamine? The hypocrisy is almost impressive.</description>
+      <description>You carefully curate context for AI. But what are you feeding your own neural networks? Reels and cheap dopamine? The hypocrisy is almost impressive!</description>
     </item>
     <item>
       <title>It's Not AI. It's Overproduction.</title>
